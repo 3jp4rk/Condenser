@@ -92,17 +92,17 @@ def main():
     # Set seed before initializing model.
     set_seed(training_args.seed)
 
-    train_set = load_dataset(
-        'json',
-        data_files=data_args.train_path,
-        block_size=2**25,
-    )['train']
-    dev_set = load_dataset(
-        'json',
-        data_files=data_args.validation_file,
-        block_size=2**25
-    )['train'] \
-        if data_args.validation_file is not None else None
+    # train_set = load_dataset(
+    #     'json',
+    #     data_files=data_args.train_path,
+    #     block_size=2**25,
+    # )['train']
+    # dev_set = load_dataset(
+    #     'json',
+    #     data_files=data_args.validation_file,
+    #     block_size=2**25
+    # )['train'] \
+    #     if data_args.validation_file is not None else None
 
     if model_args.config_name:
         config = AutoConfig.from_pretrained(model_args.config_name, cache_dir=model_args.cache_dir)
@@ -143,6 +143,25 @@ def main():
         logger.warning('Training from scratch.')
         model = _condenser_cls.from_config(
             config, model_args, data_args, training_args)
+        
+    ### test
+    # input
+    text = "안녕하세요. 파수의 2023년 실적이 어떻게 되나요?"
+    input_ids = tokenizer(text)
+    print(input_ids)
+    input_ids = input_ids
+    
+    print(type(input_ids))
+    
+    import torch
+    # forward 
+    with torch.no_grad():
+        out = model(input_ids)
+        
+    
+    a = 1
+        
+    quit()
 
     # Data collator
     # This one will take care of randomly masking the tokens.
@@ -151,6 +170,7 @@ def main():
         mlm_probability=data_args.mlm_probability,
         max_seq_length=data_args.max_seq_length,
     )
+    
     # Initialize our Trainer
     trainer = Trainer(
         model=model,

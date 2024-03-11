@@ -19,9 +19,18 @@ import torch
 from torch import nn, Tensor
 import torch.distributed as dist
 import torch.nn.functional as F
+
+# Bert
 from transformers import BertModel, BertConfig, AutoModel, AutoModelForMaskedLM, AutoConfig, PretrainedConfig, \
     RobertaModel
 from transformers.models.bert.modeling_bert import BertPooler, BertOnlyMLMHead, BertPreTrainingHeads, BertLayer
+
+# Electra
+from transformers import ElectraModel, BertConfig, AutoModel, AutoModelForMaskedLM, AutoConfig, PretrainedConfig
+from transformers.models.electra.modeling_electra import ElectraLayer
+
+
+
 from transformers.modeling_outputs import SequenceClassifierOutput, BaseModelOutputWithPooling, MaskedLMOutput
 from transformers.models.roberta.modeling_roberta import RobertaLayer
 
@@ -36,6 +45,7 @@ class CondenserForPretraining(nn.Module):
     def __init__(
         self,
         bert: BertModel,
+        # electra: ElectraModel,
         model_args: ModelArguments,
         data_args: DataTrainingArguments,
         train_args: TrainingArguments
@@ -52,7 +62,8 @@ class CondenserForPretraining(nn.Module):
         self.train_args = train_args
         self.data_args = data_args
 
-    def forward(self, model_input, labels):
+    ## tensor로 가정하고 만들었네 
+    def forward(self, model_input, labels=None):
         attention_mask = self.lm.get_extended_attention_mask(
             model_input['attention_mask'],
             model_input['attention_mask'].shape,
@@ -65,7 +76,13 @@ class CondenserForPretraining(nn.Module):
             output_hidden_states=True,
             return_dict=True
         )
+        
+        # hidden이 이게 맞나? 
+        # Bert: 마지막 layer가 BertPool layer -> [CLS] token에 대한 output임 
         cls_hiddens = lm_out.hidden_states[-1][:, :1]
+
+        # Electra Token Classification 할 때는 linear layer 하나 추가해서 해야 함 
+        
         skip_hiddens = lm_out.hidden_states[self.model_args.skip_from]
 
         hiddens = torch.cat([cls_hiddens, skip_hiddens[:, 1:]], dim=1)
@@ -100,11 +117,46 @@ class CondenserForPretraining(nn.Module):
     ):
         hf_model = AutoModelForMaskedLM.from_pretrained(*args, **kwargs)
         model = cls(hf_model, model_args, data_args, train_args)
+        
+        # change model weight with Electra
+        electra_model = AutoModel.from_pretrained('tunib/electra-ko-en-base')
+        
+        electra_dict = electra_model.state_dict()
+
+
+        # print(electra_dict)
+        
+        
+        bert_keys = hf_model.state_dict().keys()
+        electra_keys = electra_model.state_dict().keys()
+        
+        print("bert key length: ", len(bert_keys))
+        print("electra key length: ", len(electra_keys))
+        quit()
+        
+        
+        print(model.state_dict().keys()) # cls head 추가해서 늘어난 거고 ;; 
+        print("===================================")
+        print(electra_model.state_dict().keys())
+        # print(model.state_dict()["lm.bert.embeddings.word_embeddings.weight"])
+        
+        print("==============================")
+        
+        model.load_state_dict(electra_dict)
+        print(model.state_dict()["lm.bert.embeddings.word_embeddings.weight"])
+        
+        
+        
         path = args[0]
         if os.path.exists(os.path.join(path, 'model.pt')):
             logger.info('loading extra weights from local files')
             model_dict = torch.load(os.path.join(path, 'model.pt'), map_location="cpu")
             load_result = model.load_state_dict(model_dict, strict=False)
+            
+        # for debugging
+            
+            
+            
         return model
 
     @classmethod

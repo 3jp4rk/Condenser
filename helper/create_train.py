@@ -27,15 +27,18 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--file', type=str)
 parser.add_argument('--save_to', type=str)
 parser.add_argument('--column', type=int, help="take specified column")
-parser.add_argument('--tokenizer_name', required=True)
+# parser.add_argument('--tokenizer_name', required=True)
 parser.add_argument('--max_len', type=int, default=512)
 parser.add_argument('--chunksize', type=int, default=500)
 parser.add_argument('--short_sentence_prob', type=float, default=0.1)
 args = parser.parse_args()
 
-tokenizer = AutoTokenizer.from_pretrained(args.tokenizer_name, use_fast=True)
+# tokenizer = AutoTokenizer.from_pretrained(args.tokenizer_name, use_fast=True)
+tokenizer = AutoTokenizer.from_pretrained('./merged_tokenizer/merged_tokenizer/', 
+                                          local_files_only=True) # LlamaTokenizerFast
 file_name = os.path.split(args.file)[1]
 
+### 
 target_length = args.max_len - tokenizer.num_special_tokens_to_add(pair=False)
 
 
@@ -43,6 +46,7 @@ def encode_one_line(text: str):
     if args.column is not None:
         text = text.split('\t')[args.column]
     blocks = []
+    # 문장 분리기를 이렇게 쓰네 . . . 
     sentences = nltk.sent_tokenize(text)
     ids = [
         tokenizer(
@@ -56,8 +60,10 @@ def encode_one_line(text: str):
     curr_len = 0
     curr_block = []
 
+    # short_sentence_prob=0.1보다 random.random()
     curr_tgt_len = target_length if random.random() > args.short_sentence_prob else random.randint(1, target_length)
 
+    # 뭐야? block을 잘라 놓고 왜 다시 붙여??? 
     for sent in ids:
         if curr_len + len(sent) > curr_tgt_len and curr_len > 0:
             blocks.append(curr_block)
@@ -71,7 +77,7 @@ def encode_one_line(text: str):
         blocks.append(curr_block)
     return blocks
 
-
+# 한 줄에 한 passage
 with open(args.file, 'r') as corpus_file:
     lines = corpus_file.readlines()
 
