@@ -52,24 +52,31 @@ class CondenserForPretraining(nn.Module):
     ):
         super(CondenserForPretraining, self).__init__()
         self.lm = bert
+        print(self.lm)
         self.c_head = nn.ModuleList(
             [BertLayer(bert.config) for _ in range(model_args.n_head_layers)]
         )
+        # print(self.c_head)
         self.c_head.apply(self.lm._init_weights)
-        self.cross_entropy = nn.CrossEntropyLoss()
+        # print("=====================================================")
+        # print(self.c_head)
 
+        self.cross_entropy = nn.CrossEntropyLoss()
         self.model_args = model_args
         self.train_args = train_args
         self.data_args = data_args
 
     ## tensor로 가정하고 만들었네 
-    def forward(self, model_input, labels=None):
+    def forward(self, model_input, labels): # =None):
+        
+        # self.lm = bert
         attention_mask = self.lm.get_extended_attention_mask(
             model_input['attention_mask'],
             model_input['attention_mask'].shape,
             model_input['attention_mask'].device
         )
 
+        # 
         lm_out: MaskedLMOutput = self.lm(
             **model_input,
             labels=labels,
@@ -79,14 +86,14 @@ class CondenserForPretraining(nn.Module):
         
         # hidden이 이게 맞나? 
         # Bert: 마지막 layer가 BertPool layer -> [CLS] token에 대한 output임 
-        cls_hiddens = lm_out.hidden_states[-1][:, :1]
-
-        # Electra Token Classification 할 때는 linear layer 하나 추가해서 해야 함 
         
+        # cls 
+        cls_hiddens = lm_out.hidden_states[-1][:, :1]
         skip_hiddens = lm_out.hidden_states[self.model_args.skip_from]
 
         hiddens = torch.cat([cls_hiddens, skip_hiddens[:, 1:]], dim=1)
 
+        # Condenser head 통과
         for layer in self.c_head:
             layer_out = layer(
                 hiddens,
@@ -112,38 +119,62 @@ class CondenserForPretraining(nn.Module):
 
     @classmethod
     def from_pretrained(
-            cls, model_args: ModelArguments, data_args: DataTrainingArguments, train_args: TrainingArguments,
+            cls, # self
+            model_args: ModelArguments, data_args: DataTrainingArguments, train_args: TrainingArguments,
             *args, **kwargs
     ):
         hf_model = AutoModelForMaskedLM.from_pretrained(*args, **kwargs)
+        
+        
+        
+        # print("===============================")
+        # print("huggingface model")
+        # print(hf_model)
+        # print("===============================")
+        
+        # for name, value in hf_model.state_dict().items():
+        #     print("bert-base-uncased")
+        #     print(f"{name}: {value}")
+        #     break
+        
+        # print("====================================")
         model = cls(hf_model, model_args, data_args, train_args)
         
+        # print(model)
+        
+        # print("====================================")
+        
+        for name, value in model.state_dict().items():
+            # print("condenser-head-applied")
+            print(name)
+        a = 1
+        
+        # CondenserPretraining
+        
         # change model weight with Electra
-        electra_model = AutoModel.from_pretrained('tunib/electra-ko-en-base')
-        
-        electra_dict = electra_model.state_dict()
+        electra_model = AutoModelForMaskedLM.from_pretrained('tunib/electra-ko-en-base')
+        print(electra_model)
+        a = 1
+        # electra_dict = electra_model.state_dict()
+        # # print(electra_dict)
 
-
-        # print(electra_dict)
+        # bert_keys = hf_model.state_dict().keys()
+        # electra_keys = electra_model.state_dict().keys()
+        
+        # print("bert key length: ", len(bert_keys))
+        # print("electra key length: ", len(electra_keys))
+        # quit()
         
         
-        bert_keys = hf_model.state_dict().keys()
-        electra_keys = electra_model.state_dict().keys()
+        # print(model.state_dict().keys()) # cls head 추가해서 늘어난 거고 ;; 
+        # print("===================================")
+        # print(electra_model.state_dict().keys())
+        # # print(model.state_dict()["lm.bert.embeddings.word_embeddings.weight"])
         
-        print("bert key length: ", len(bert_keys))
-        print("electra key length: ", len(electra_keys))
-        quit()
+        # print("==============================")
         
-        
-        print(model.state_dict().keys()) # cls head 추가해서 늘어난 거고 ;; 
-        print("===================================")
-        print(electra_model.state_dict().keys())
+        # model.load_state_dict(electra_dict)
         # print(model.state_dict()["lm.bert.embeddings.word_embeddings.weight"])
-        
-        print("==============================")
-        
-        model.load_state_dict(electra_dict)
-        print(model.state_dict()["lm.bert.embeddings.word_embeddings.weight"])
         
         
         
@@ -154,9 +185,6 @@ class CondenserForPretraining(nn.Module):
             load_result = model.load_state_dict(model_dict, strict=False)
             
         # for debugging
-            
-            
-            
         return model
 
     @classmethod
