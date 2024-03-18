@@ -41,6 +41,11 @@ CONDENSER_TYPE_MAP = {
     'roberta': RobertaCondenserForPretraining,
 }
 
+# import wandb
+# wandb.init(project="Condenser pretraining")
+# wandb.run.name = "Condenser pretrain # 1"
+# wandb.run.save()
+
 
 def main():
     # See all possible arguments in src/transformers/training_args.py
@@ -104,6 +109,13 @@ def main():
     # )['train'] \
     #     if data_args.validation_file is not None else None
 
+    from enko_dataset import ComplicatedDataset
+    enko_dataset = ComplicatedDataset(
+        tokenizer=tokenizer,
+        max_length=512,
+        namuwiki=False
+        )
+
     if model_args.config_name:
         config = AutoConfig.from_pretrained(model_args.config_name, cache_dir=model_args.cache_dir)
     elif model_args.model_name_or_path:
@@ -133,6 +145,7 @@ def main():
     _condenser_cls = CONDENSER_TYPE_MAP[model_args.model_type]
     if model_args.model_name_or_path:
         model = _condenser_cls.from_pretrained(
+            tokenizer, # pass for resize_token_embeddings()
             model_args, data_args, training_args,
             model_args.model_name_or_path,
             from_tf=bool(".ckpt" in model_args.model_name_or_path),
@@ -144,24 +157,28 @@ def main():
         model = _condenser_cls.from_config(
             config, model_args, data_args, training_args)
         
-    ### test
+    ### debug test 
     # input
-    text = "안녕하세요. 파수의 2023년 실적이 어떻게 되나요?"
-    input_ids = tokenizer(text)
-    print(input_ids)
-    input_ids = input_ids
+    # text = "안녕하세요. 파수의 2023년 실적이 어떻게 되나요?"
+    # input_ids = tokenizer(text)
+    # print(input_ids)
+    # input_ids = input_ids
     
-    print(type(input_ids))
+    # print(type(input_ids))
     
-    import torch
-    # forward 
-    with torch.no_grad():
-        out = model(input_ids)
+    # import torch
+    # # forward 
+    # with torch.no_grad():
+    #     out = model(input_ids)
         
     
-    a = 1
+    # a = 1
         
-    quit()
+    # quit()
+    
+    # 
+    
+    
 
     # Data collator
     # This one will take care of randomly masking the tokens.
@@ -170,13 +187,13 @@ def main():
         mlm_probability=data_args.mlm_probability,
         max_seq_length=data_args.max_seq_length,
     )
-    
+
     # Initialize our Trainer
     trainer = Trainer(
         model=model,
         args=training_args,
-        train_dataset=train_set,
-        eval_dataset=dev_set,
+        train_dataset=enko_dataset,
+        eval_dataset=enko_dataset.eval_dataset,
         tokenizer=tokenizer,
         data_collator=data_collator,
     )

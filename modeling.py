@@ -20,16 +20,9 @@ from torch import nn, Tensor
 import torch.distributed as dist
 import torch.nn.functional as F
 
-# Bert
 from transformers import BertModel, BertConfig, AutoModel, AutoModelForMaskedLM, AutoConfig, PretrainedConfig, \
     RobertaModel
 from transformers.models.bert.modeling_bert import BertPooler, BertOnlyMLMHead, BertPreTrainingHeads, BertLayer
-
-# Electra
-from transformers import ElectraModel, BertConfig, AutoModel, AutoModelForMaskedLM, AutoConfig, PretrainedConfig
-from transformers.models.electra.modeling_electra import ElectraLayer
-
-
 
 from transformers.modeling_outputs import SequenceClassifierOutput, BaseModelOutputWithPooling, MaskedLMOutput
 from transformers.models.roberta.modeling_roberta import RobertaLayer
@@ -45,55 +38,41 @@ class CondenserForPretraining(nn.Module):
     def __init__(
         self,
         bert: BertModel,
-        # electra: ElectraModel,
         model_args: ModelArguments,
         data_args: DataTrainingArguments,
-        train_args: TrainingArguments
+        train_args: TrainingArguments,
     ):
         super(CondenserForPretraining, self).__init__()
         self.lm = bert
-        print(self.lm)
         self.c_head = nn.ModuleList(
             [BertLayer(bert.config) for _ in range(model_args.n_head_layers)]
         )
-        # print(self.c_head)
         self.c_head.apply(self.lm._init_weights)
-        # print("=====================================================")
-        # print(self.c_head)
-
         self.cross_entropy = nn.CrossEntropyLoss()
         self.model_args = model_args
         self.train_args = train_args
         self.data_args = data_args
 
-    ## tensor로 가정하고 만들었네 
-    def forward(self, model_input, labels): # =None):
-        
-        # self.lm = bert
+    def forward(self, model_input, labels):
+
         attention_mask = self.lm.get_extended_attention_mask(
             model_input['attention_mask'],
             model_input['attention_mask'].shape,
             model_input['attention_mask'].device
         )
 
-        # 
         lm_out: MaskedLMOutput = self.lm(
             **model_input,
             labels=labels,
             output_hidden_states=True,
             return_dict=True
         )
-        
-        # hidden이 이게 맞나? 
-        # Bert: 마지막 layer가 BertPool layer -> [CLS] token에 대한 output임 
-        
-        # cls 
+
         cls_hiddens = lm_out.hidden_states[-1][:, :1]
         skip_hiddens = lm_out.hidden_states[self.model_args.skip_from]
 
         hiddens = torch.cat([cls_hiddens, skip_hiddens[:, 1:]], dim=1)
 
-        # Condenser head 통과
         for layer in self.c_head:
             layer_out = layer(
                 hiddens,
@@ -120,71 +99,35 @@ class CondenserForPretraining(nn.Module):
     @classmethod
     def from_pretrained(
             cls, # self
-            model_args: ModelArguments, data_args: DataTrainingArguments, train_args: TrainingArguments,
-            *args, **kwargs
+            tokenizer,
+            model_args: ModelArguments, 
+            data_args: DataTrainingArguments, 
+            train_args: TrainingArguments,
+            *args, # args, kwargs로 tokenizer pass하려고 했는데 from_pretrained에서 그대로 사용하다 보니 안 됨... 
+            **kwargs # 이걸 from_pretrained에서 사용하다 보니까 tokenizer를 여기로 pass해 주면 안 됨 
     ):
         hf_model = AutoModelForMaskedLM.from_pretrained(*args, **kwargs)
         
+        ### load weight of tunib/electra-en-ko-base
+        tunib_electra = AutoModel.from_pretrained('tunib/electra-ko-en-base')
+        tunib_dict = tunib_electra.state_dict()
         
+        hf_model.resize_token_embeddings(len(tokenizer)) # fit embedding into tunib tokenizer
+        for key, _ in list(tunib_dict.items()):
+            new_key = "bert." + key
+            tunib_dict[new_key] = tunib_dict[key]   
+            del tunib_dict[key]
         
-        # print("===============================")
-        # print("huggingface model")
-        # print(hf_model)
-        # print("===============================")
-        
-        # for name, value in hf_model.state_dict().items():
-        #     print("bert-base-uncased")
-        #     print(f"{name}: {value}")
-        #     break
-        
-        # print("====================================")
-        model = cls(hf_model, model_args, data_args, train_args)
-        
-        # print(model)
-        
-        # print("====================================")
-        
-        for name, value in model.state_dict().items():
-            # print("condenser-head-applied")
-            print(name)
-        a = 1
-        
-        # CondenserPretraining
-        
-        # change model weight with Electra
-        electra_model = AutoModelForMaskedLM.from_pretrained('tunib/electra-ko-en-base')
-        print(electra_model)
-        a = 1
-        # electra_dict = electra_model.state_dict()
-        # # print(electra_dict)
+        hf_model.load_state_dict(tunib_dict, strict=False)
+        ###
 
-        # bert_keys = hf_model.state_dict().keys()
-        # electra_keys = electra_model.state_dict().keys()
-        
-        # print("bert key length: ", len(bert_keys))
-        # print("electra key length: ", len(electra_keys))
-        # quit()
-        
-        
-        # print(model.state_dict().keys()) # cls head 추가해서 늘어난 거고 ;; 
-        # print("===================================")
-        # print(electra_model.state_dict().keys())
-        # # print(model.state_dict()["lm.bert.embeddings.word_embeddings.weight"])
-        
-        # print("==============================")
-        
-        # model.load_state_dict(electra_dict)
-        # print(model.state_dict()["lm.bert.embeddings.word_embeddings.weight"])
-        
-        
-        
+        model = cls(hf_model, model_args, data_args, train_args)
         path = args[0]
         if os.path.exists(os.path.join(path, 'model.pt')):
             logger.info('loading extra weights from local files')
             model_dict = torch.load(os.path.join(path, 'model.pt'), map_location="cpu")
             load_result = model.load_state_dict(model_dict, strict=False)
-            
-        # for debugging
+
         return model
 
     @classmethod
@@ -211,6 +154,8 @@ class CondenserForPretraining(nn.Module):
         torch.save([self.data_args, self.model_args, self.train_args], os.path.join(output_dir, 'args.pt'))
 
 class RobertaCondenserForPretraining(CondenserForPretraining):
+    
+    
     def __init__(
             self,
             roberta: RobertaModel,

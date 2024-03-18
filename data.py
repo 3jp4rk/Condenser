@@ -30,10 +30,13 @@ class CondenserCollator(DataCollatorForWholeWordMask):
 
         from transformers import BertTokenizer, BertTokenizerFast
         from transformers import RobertaTokenizer, RobertaTokenizerFast
+        from transformers import ElectraTokenizer, ElectraTokenizerFast
         if isinstance(self.tokenizer, (BertTokenizer, BertTokenizerFast)):
             self.whole_word_cand_indexes = self._whole_word_cand_indexes_bert
         elif isinstance(self.tokenizer, (RobertaTokenizer, RobertaTokenizerFast)):
             self.whole_word_cand_indexes = self. _whole_word_cand_indexes_roberta
+        elif isinstance(self. tokenizer, (ElectraTokenizer, ElectraTokenizerFast)):
+            self.whole_word_cand_indexes = self. _whole_word_cand_indexes_bert
         else:
             raise NotImplementedError(f'{type(self.tokenizer)} collator not supported yet')
 
@@ -44,7 +47,6 @@ class CondenserCollator(DataCollatorForWholeWordMask):
         for (i, token) in enumerate(input_tokens):
             if token in self.specials:
                 continue
-
             if len(cand_indexes) >= 1 and token.startswith("##"):
                 cand_indexes[-1].append(i)
             else:
@@ -56,7 +58,6 @@ class CondenserCollator(DataCollatorForWholeWordMask):
         for (i, token) in enumerate(input_tokens):
             if token in self.specials:
                 raise ValueError('We expect only raw input for roberta for current implementation')
-
             if i == 0:
                 cand_indexes.append([0])
             elif not token.startswith('\u0120'):
@@ -120,6 +121,7 @@ class CondenserCollator(DataCollatorForWholeWordMask):
         assert len(seq) <= tgt_len
         return seq + [val for _ in range(tgt_len - len(seq))]
 
+    ### here 
     def __call__(self, examples: List[Dict[str, List[int]]]):
         encoded_examples = []
         masks = []
