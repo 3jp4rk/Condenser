@@ -36,15 +36,17 @@ from transformers.trainer_utils import is_main_process
 
 logger = logging.getLogger(__name__)
 
+### wandb
+os.environ["WANDB_PROJECT"] = "condenser-bert-pretrain"
+
+### ignore tokenizer warning
+import warnings
+warnings.filterwarnings("ignore", message=".*tokenizers.*")
+
 CONDENSER_TYPE_MAP = {
     'bert': CondenserForPretraining,
     'roberta': RobertaCondenserForPretraining,
 }
-
-# import wandb
-# wandb.init(project="Condenser pretraining")
-# wandb.run.name = "Condenser pretrain # 1"
-# wandb.run.save()
 
 
 def main():
@@ -88,11 +90,11 @@ def main():
         + f"distributed training: {bool(training_args.local_rank != -1)}, 16-bits training: {training_args.fp16}"
     )
     # Set the verbosity to info of the Transformers logger (on main process only):
-    if is_main_process(training_args.local_rank):
-        transformers.utils.logging.set_verbosity_info()
-        transformers.utils.logging.enable_default_handler()
-        transformers.utils.logging.enable_explicit_format()
-    logger.info("Training/evaluation parameters %s", training_args)
+    # if is_main_process(training_args.local_rank):
+    #     transformers.utils.logging.set_verbosity_info()
+    #     transformers.utils.logging.enable_default_handler()
+    #     transformers.utils.logging.enable_explicit_format()
+    #     logger.info("Training/evaluation parameters %s", training_args)
 
     # Set seed before initializing model.
     set_seed(training_args.seed)
@@ -108,13 +110,6 @@ def main():
     #     block_size=2**25
     # )['train'] \
     #     if data_args.validation_file is not None else None
-
-    from enko_dataset import ComplicatedDataset
-    enko_dataset = ComplicatedDataset(
-        tokenizer=tokenizer,
-        max_length=512,
-        namuwiki=False
-        )
 
     if model_args.config_name:
         config = AutoConfig.from_pretrained(model_args.config_name, cache_dir=model_args.cache_dir)
@@ -156,30 +151,21 @@ def main():
         logger.warning('Training from scratch.')
         model = _condenser_cls.from_config(
             config, model_args, data_args, training_args)
-        
-    ### debug test 
-    # input
-    # text = "안녕하세요. 파수의 2023년 실적이 어떻게 되나요?"
-    # input_ids = tokenizer(text)
-    # print(input_ids)
-    # input_ids = input_ids
-    
-    # print(type(input_ids))
-    
-    # import torch
-    # # forward 
-    # with torch.no_grad():
-    #     out = model(input_ids)
-        
-    
+
+    ### load dataset
+    sys.path.append('/root') # sys.path.append('../')
+    from enko_dataset import ComplicatedDataset
+    enko_dataset = ComplicatedDataset(
+        tokenizer=tokenizer,
+        max_length=512,
+        namuwiki=False,
+        train_ratio=0.9
+        )
+
+    print(enko_dataset.total_train_len)
+    print(enko_dataset.total_eval_len)
     # a = 1
         
-    # quit()
-    
-    # 
-    
-    
-
     # Data collator
     # This one will take care of randomly masking the tokens.
     data_collator = CondenserCollator(
@@ -236,3 +222,4 @@ def _mp_fn(index):
 
 if __name__ == "__main__":
     main()
+train

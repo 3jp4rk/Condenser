@@ -126,7 +126,7 @@ class CondenserCollator(DataCollatorForWholeWordMask):
         encoded_examples = []
         masks = []
         mlm_masks = []
-
+    
         for e in examples:
             e_trunc = self._truncate(e['text'])
             tokens = [self.tokenizer._convert_id_to_token(tid) for tid in e_trunc]
@@ -145,7 +145,12 @@ class CondenserCollator(DataCollatorForWholeWordMask):
             masks.append(encoded['attention_mask'])
             encoded_examples.append(encoded['input_ids'])
 
-        inputs, labels = self.mask_tokens(
+        ### mask_tokens: AttributeError: 'CondenserCollator' object has no attribute 'mask_tokens' -> torch_mask_tokens
+        # inputs, labels = self.mask_tokens(
+        #     torch.tensor(encoded_examples, dtype=torch.long),
+        #     torch.tensor(mlm_masks, dtype=torch.long)
+        # )
+        inputs, labels = self.torch_mask_tokens(
             torch.tensor(encoded_examples, dtype=torch.long),
             torch.tensor(mlm_masks, dtype=torch.long)
         )
