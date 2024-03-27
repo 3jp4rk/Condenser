@@ -20,10 +20,9 @@ import math
 import os
 import sys
 from datasets import load_dataset
-
 from arguments import DataTrainingArguments, ModelArguments, \
     CoCondenserPreTrainingArguments as TrainingArguments
-from data import CoCondenserDataset, CoCondenserCollator
+from data import CoCondenserCollator
 from modeling import CoCondenserForPretraining
 from trainer import CoCondenserPretrainer as Trainer
 import transformers
@@ -37,6 +36,19 @@ from transformers import (
 from transformers.trainer_utils import is_main_process
 
 logger = logging.getLogger(__name__)
+
+
+### wandb
+os.environ["WANDB_PROJECT"] = "coCondenser-bert-pretrain"
+
+
+### ignore tokenizer warning
+import warnings
+warnings.filterwarnings("ignore", message=".*tokenizers.*")
+
+
+
+
 MODEL_CONFIG_CLASSES = list(MODEL_FOR_MASKED_LM_MAPPING.keys())
 MODEL_TYPES = tuple(conf.model_type for conf in MODEL_CONFIG_CLASSES)
 
@@ -95,13 +107,13 @@ def main():
     # Set seed before initializing model.
     set_seed(training_args.seed)
 
-    train_set = CoCondenserDataset(load_dataset(
-        'json',
-        data_files=data_args.train_path,
-        block_size=2 ** 25,
-        ignore_verifications=False,
-    )['train'], data_args)
-    dev_set = None
+    # train_set = CoCondenserDataset(load_dataset(
+    #     'json',
+    #     data_files=data_args.train_path,
+    #     block_size=2 ** 25,
+    #     ignore_verifications=False,
+    # )['train'], data_args)
+    # dev_set = None
 
     if model_args.config_name:
         config = AutoConfig.from_pretrained(model_args.config_name, cache_dir=model_args.cache_dir)
@@ -137,13 +149,29 @@ def main():
             from_tf=bool(".ckpt" in model_args.model_name_or_path),
             config=config,
             cache_dir=model_args.cache_dir,
+            local_files_only=True
         )
     else:
         logger.warning('Training from scratch.')
         model = _condenser_cls.from_config(
             config, model_args, data_args, training_args)
+        
+    # import torch
+    
+    # IGNORE 
+    # model.lm.resize_token_embeddings(len(tokenizer))
+    # for k, v in model.state_dict().items():
+    #     if "embedding" in k:
+    #         print(f"{k}: {v.size()}")
 
-    model.lm.resize_token_embeddings(len(tokenizer))
+    sys.path.append('/root') # sys.path.append('../')
+    from marco_dataset import ComplicatedDataset
+    train_set = ComplicatedDataset(
+        tokenizer=tokenizer,
+        train_ratio=0.9
+    )
+    dev_set = train_set.eval_dataset
+    
 
     # Data collator
     data_collator = CoCondenserCollator(

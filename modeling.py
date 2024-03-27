@@ -99,7 +99,7 @@ class CondenserForPretraining(nn.Module):
     @classmethod
     def from_pretrained(
             cls, # self
-            tokenizer,
+            # tokenizer, # NOT USED FOR coCondenser pre-training
             model_args: ModelArguments, 
             data_args: DataTrainingArguments, 
             train_args: TrainingArguments,
@@ -108,18 +108,18 @@ class CondenserForPretraining(nn.Module):
     ):
         hf_model = AutoModelForMaskedLM.from_pretrained(*args, **kwargs)
         
-        ### load weight of tunib/electra-en-ko-base
-        tunib_electra = AutoModel.from_pretrained('tunib/electra-ko-en-base')
-        tunib_dict = tunib_electra.state_dict()
+        ### load weight of tunib/electra-en-ko-base (NOT USED FOR coCondenser)
+        # tunib_electra = AutoModel.from_pretrained('tunib/electra-ko-en-base')
+        # tunib_dict = tunib_electra.state_dict()
         
-        hf_model.resize_token_embeddings(len(tokenizer)) # fit embedding into tunib tokenizer
-        for key, _ in list(tunib_dict.items()):
-            new_key = "bert." + key
-            tunib_dict[new_key] = tunib_dict[key]   
-            del tunib_dict[key]
+        # hf_model.resize_token_embeddings(len(tokenizer)) # fit embedding into tunib tokenizer
+        # for key, _ in list(tunib_dict.items()):
+        #     new_key = "bert." + key
+        #     tunib_dict[new_key] = tunib_dict[key]   
+        #     del tunib_dict[key]
         
-        hf_model.load_state_dict(tunib_dict, strict=False)
-        ###
+        # hf_model.load_state_dict(tunib_dict, strict=False)
+        # ###
 
         model = cls(hf_model, model_args, data_args, train_args)
         path = args[0]
