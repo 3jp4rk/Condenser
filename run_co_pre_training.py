@@ -19,7 +19,7 @@ import logging
 import math
 import os
 import sys
-from datasets import load_dataset
+# from datasets import load_dataset
 from arguments import DataTrainingArguments, ModelArguments, \
     CoCondenserPreTrainingArguments as TrainingArguments
 from data import CoCondenserCollator
@@ -40,6 +40,8 @@ logger = logging.getLogger(__name__)
 
 ### wandb
 os.environ["WANDB_PROJECT"] = "coCondenser-bert-pretrain"
+os.environ["WANDB__SERVICE_WAIT"] = "300"
+os.environ["WANDB_INIT_TIMEOUT"] = "300"
 
 
 ### ignore tokenizer warning
@@ -168,6 +170,7 @@ def main():
     from marco_dataset import ComplicatedDataset
     train_set = ComplicatedDataset(
         tokenizer=tokenizer,
+        max_length=512,
         train_ratio=0.9
     )
     dev_set = train_set.eval_dataset
@@ -190,13 +193,14 @@ def main():
     )
 
     # Training
-    if training_args.do_train:
-        model_path = (
-            model_args.model_name_or_path
-            if (model_args.model_name_or_path is not None and os.path.isdir(model_args.model_name_or_path))
-            else None
-        )
-        trainer.train(model_path=model_path)
+    if training_args.do_train: # 이걸 왜 여기서 하지? 아니 .. . . 심지어 에러난다고 . . 
+        # model_path = (
+        #     model_args.model_name_or_path
+        #     if (model_args.model_name_or_path is not None and os.path.isdir(model_args.model_name_or_path))
+        #     else None
+        # )
+        # trainer.train(model_path=model_path)
+        trainer.train()
         trainer.save_model()  # Saves the tokenizer too for easy upload
 
 

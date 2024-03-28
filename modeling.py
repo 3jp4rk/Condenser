@@ -126,7 +126,7 @@ class CondenserForPretraining(nn.Module):
         if os.path.exists(os.path.join(path, 'model.pt')):
             logger.info('loading extra weights from local files')
             model_dict = torch.load(os.path.join(path, 'model.pt'), map_location="cpu")
-            load_result = model.load_state_dict(model_dict, strict=False)
+            load_result = model.load_state_dict(model_dict, strict=False) # 여기서 바뀌어서 그렇구나 ㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
 
         return model
 
@@ -200,6 +200,7 @@ class CoCondenserForPretraining(CondenserForPretraining):
         self.register_buffer(
             'co_target', target
         )
+        
 
     def _gather_tensor(self, t: Tensor):
         all_tensors = [torch.empty_like(t) for _ in range(dist.get_world_size())]

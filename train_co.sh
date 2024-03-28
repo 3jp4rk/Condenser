@@ -1,4 +1,4 @@
-torchrun --nproc_per_node 4 run_co_pre_training.py \
+torchrun --nproc_per_node 1 run_co_pre_training.py \
   --output_dir "co_condenser_pretrain" \
   --model_name_or_path "/root/condenser_pretrain/checkpoint-260000/" \
   --do_train \
@@ -6,7 +6,7 @@ torchrun --nproc_per_node 4 run_co_pre_training.py \
   --logging_steps 1 \
   --remove_unused_columns false \
   --save_steps 20000 \
-  --eval_steps 20000 \
+  --eval_steps 5000 \
   --model_type bert \
   --per_device_train_batch_size 16 \
   --gradient_accumulation_steps 1 \
