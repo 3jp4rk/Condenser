@@ -1,21 +1,22 @@
-torchrun --nproc_per_node 1 run_co_pre_training.py \
-  --output_dir "co_condenser_pretrain" \
-  --model_name_or_path "/root/condenser_pretrain/checkpoint-260000/" \
+torchrun --nproc_per_node 4 run_co_pre_training.py \
+  --output_dir "cocondenser_pretrain" \
+  --model_name_or_path "/root/condenser_pretrain/checkpoint-200000" \
   --do_train \
   --report_to "wandb" \
   --logging_steps 1 \
   --remove_unused_columns false \
-  --save_steps 20000 \
-  --eval_steps 5000 \
+  --save_steps 1000 \
+  --eval_steps 500 \
+  --evaluation_strategy "steps" \
   --model_type bert \
-  --per_device_train_batch_size 16 \
+  --per_device_train_batch_size 8 \
   --gradient_accumulation_steps 1 \
   --warmup_ratio 0.1 \
   --learning_rate 1e-4 \
-  --num_train_epochs 8 \
+  --num_train_epochs 20 \
   --dataloader_drop_last \
   --overwrite_output_dir \
-  --dataloader_num_workers 32 \
+  --dataloader_num_workers 4 \
   --n_head_layers 2 \
   --skip_from 6 \
   --max_seq_length 512 \

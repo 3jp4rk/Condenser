@@ -39,6 +39,8 @@ logger = logging.getLogger(__name__)
 
 
 ### wandb
+import wandb
+wandb.init()
 os.environ["WANDB_PROJECT"] = "coCondenser-bert-pretrain"
 os.environ["WANDB__SERVICE_WAIT"] = "300"
 os.environ["WANDB_INIT_TIMEOUT"] = "300"
@@ -48,7 +50,9 @@ os.environ["WANDB_INIT_TIMEOUT"] = "300"
 import warnings
 warnings.filterwarnings("ignore", message=".*tokenizers.*")
 
-
+### check for nan loss
+import torch
+torch.autograd.set_detect_anomaly(True)
 
 
 MODEL_CONFIG_CLASSES = list(MODEL_FOR_MASKED_LM_MAPPING.keys())
@@ -151,7 +155,7 @@ def main():
             from_tf=bool(".ckpt" in model_args.model_name_or_path),
             config=config,
             cache_dir=model_args.cache_dir,
-            local_files_only=True
+            # local_files_only=True
         )
     else:
         logger.warning('Training from scratch.')
@@ -171,7 +175,8 @@ def main():
     train_set = ComplicatedDataset(
         tokenizer=tokenizer,
         max_length=512,
-        train_ratio=0.9
+        # train_ratio=0.9
+        train_ratio = 1.0
     )
     dev_set = train_set.eval_dataset
     

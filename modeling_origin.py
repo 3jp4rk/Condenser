@@ -21,7 +21,7 @@ import torch.distributed as dist
 import torch.nn.functional as F
 
 from transformers import BertModel, BertConfig, AutoModel, AutoModelForMaskedLM, AutoConfig, PretrainedConfig, \
-    RobertaModel, AutoTokenizer
+    RobertaModel
 from transformers.models.bert.modeling_bert import BertPooler, BertOnlyMLMHead, BertPreTrainingHeads, BertLayer
 
 from transformers.modeling_outputs import SequenceClassifierOutput, BaseModelOutputWithPooling, MaskedLMOutput
@@ -32,17 +32,6 @@ from transformers import TrainingArguments
 import logging
 
 logger = logging.getLogger(__name__)
-
-def check_nan(model_dict):
-    
-    is_nan = False
-    for k, v in model_dict.items():
-        if 'k' == 'co-target':
-            continue
-        if torch.any(torch.isnan(v)):
-            is_nan = True
-            return True
-    return is_nan
 
 
 class CondenserForPretraining(nn.Module):
@@ -123,39 +112,21 @@ class CondenserForPretraining(nn.Module):
         # tunib_electra = AutoModel.from_pretrained('tunib/electra-ko-en-base')
         # tunib_dict = tunib_electra.state_dict()
         
-        # tokenizer = AutoTokenizer.from_pretrained('tunib/electra-ko-en-base')
-
         # hf_model.resize_token_embeddings(len(tokenizer)) # fit embedding into tunib tokenizer
-        # for key, value in list(tunib_dict.items()):
+        # for key, _ in list(tunib_dict.items()):
         #     new_key = "bert." + key
         #     tunib_dict[new_key] = tunib_dict[key]   
         #     del tunib_dict[key]
         
-        # bb_load_result = hf_model.load_state_dict(tunib_dict, strict=False)
-        ###
-        
-        
+        # hf_model.load_state_dict(tunib_dict, strict=False)
+        # ###
+
         model = cls(hf_model, model_args, data_args, train_args)
         path = args[0]
-        # path = "/home/ubuntu/ejpark/condenser"
-        if os.path.exists(os.path.join(path, 'model.pt')): 
-            logger.info('loading extra weights from local files') # load heads
-            model_dict = torch.load(os.path.join(path, 'model.pt'), map_location="cpu") 
-            load_result = model.load_state_dict(model_dict, strict=False) # load model here (don't have to set model_path in run_co_pretraining.py)
-
-        for k, v in model.state_dict().items():
-            if torch.any(torch.isnan(v)):
-                print(k)
-                quit()
-                
-        """
-        lm.cls.predictions.bias
-        lm.cls.predictions.transform.dense.weight
-        lm.cls.predictions.transform.dense.bias
-        lm.cls.predictions.transform.LayerNorm.weight
-        lm.cls.predictions.transform.LayerNorm.bias
-        lm.cls.predictions.decoder.bias
-        """
+        if os.path.exists(os.path.join(path, 'model.pt')):
+            logger.info('loading extra weights from local files')
+            model_dict = torch.load(os.path.join(path, 'model.pt'), map_location="cpu")
+            load_result = model.load_state_dict(model_dict, strict=False) # 여기서 바뀌어서 그렇구나 ㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
 
         return model
 
@@ -173,18 +144,8 @@ class CondenserForPretraining(nn.Module):
         return model
 
     def save_pretrained(self, output_dir: str):
-        
-        model_dict = self.state_dict()
-        
-        is_nan_head = check_nan(model_dict)
-        is_nan_model = check_nan(self.lm.state_dict())
-        
-        if is_nan_head or is_nan_model:
-            print("model save skipped: NaN exists in weight value.")
-            return
-
         self.lm.save_pretrained(output_dir)
-        
+        model_dict = self.state_dict()
         hf_weight_keys = [k for k in model_dict.keys() if k.startswith('lm')]
         warnings.warn(f'omiting {len(hf_weight_keys)} transformer weights')
         for k in hf_weight_keys:
@@ -193,7 +154,8 @@ class CondenserForPretraining(nn.Module):
         torch.save([self.data_args, self.model_args, self.train_args], os.path.join(output_dir, 'args.pt'))
 
 class RobertaCondenserForPretraining(CondenserForPretraining):
-
+    
+    
     def __init__(
             self,
             roberta: RobertaModel,
@@ -256,9 +218,6 @@ class CoCondenserForPretraining(CondenserForPretraining):
             model_input['attention_mask'].shape,
             model_input['attention_mask'].device
         )
-        
-        # print(f"model input: {model_input}")
-        # print(f"labels: {labels}")
 
         lm_out: MaskedLMOutput = self.lm(
             **model_input,
@@ -266,14 +225,10 @@ class CoCondenserForPretraining(CondenserForPretraining):
             output_hidden_states=True,
             return_dict=True
         )
-        ### 여기서부터 갑자기 nan이 뜨기 시작함...
-        
-        # print(f"lm_out: {lm_out.hidden_states}")
 
         cls_hiddens = lm_out.hidden_states[-1][:, :1]
         if self.train_args.local_rank > -1 and grad_cache is None:
             co_cls_hiddens = self.gather_tensors(cls_hiddens.squeeze().contiguous())[0]
-            # print(print(f"co_cls_hiddens: {co_cls_hiddens}"))
         else:
             co_cls_hiddens = cls_hiddens.squeeze()
 
@@ -294,14 +249,15 @@ class CoCondenserForPretraining(CondenserForPretraining):
         if grad_cache is None:
             co_loss = self.compute_contrastive_loss(co_cls_hiddens)
             
-            ###
-            # print(f"loss: {loss}, co: {co_loss}")
-
+            ### why loss printed as 0?
+            print(f"loss: {loss}, con_loss: {co_loss}")
+                        
             return loss + co_loss
         else:
             loss = loss * (float(hiddens.size(0)) / self.train_args.per_device_train_batch_size)
             cached_grads = grad_cache[chunk_offset: chunk_offset + co_cls_hiddens.size(0)]
             surrogate = torch.dot(cached_grads.flatten(), co_cls_hiddens.flatten())
+            
             return loss, surrogate
 
     @staticmethod
@@ -312,15 +268,7 @@ class CoCondenserForPretraining(CondenserForPretraining):
             return 1
 
     def compute_contrastive_loss(self, co_cls_hiddens):
-        
-        # print(f"hidden state: {co_cls_hiddens}")
-        
         similarities = torch.matmul(co_cls_hiddens, co_cls_hiddens.transpose(0, 1))
-        
-        # print(f"similarities: {similarities}")
         similarities.fill_diagonal_(float('-inf'))
-        
-        # check the cause of nan loss
-        print(f"co_target (batch_loss): {self.co_target}")
         co_loss = F.cross_entropy(similarities, self.co_target) * self._world_size()
         return co_loss

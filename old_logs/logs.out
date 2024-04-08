@@ -1,0 +1,3624 @@
+[2024-03-18 08:39:02,770] torch.distributed.run: [WARNING] 
+[2024-03-18 08:39:02,770] torch.distributed.run: [WARNING] *****************************************
+[2024-03-18 08:39:02,770] torch.distributed.run: [WARNING] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+[2024-03-18 08:39:02,770] torch.distributed.run: [WARNING] *****************************************
+03/18/2024 08:39:05 - WARNING - __main__ -   Process rank: 0, device: cuda:0, n_gpu: 1distributed training: True, 16-bits training: True
+03/18/2024 08:39:05 - INFO - __main__ -   Training/evaluation parameters CondenserPreTrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=32,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=None,
+evaluation_strategy=no,
+fp16=True,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=4,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0001,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=./logs/runs/Mar18_08-39-05_ab6613b10048,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=1.0,
+logging_strategy=steps,
+lr_scheduler_kwargs={},
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_cuda=False,
+num_train_epochs=8.0,
+optim=adamw_torch,
+optim_args=None,
+output_dir=./logs,
+overwrite_output_dir=True,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=False,
+report_to=['wandb'],
+resume_from_checkpoint=None,
+run_name=./logs,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=20000,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+split_batches=None,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.1,
+warmup_steps=0,
+weight_decay=0.01,
+)
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:05,942 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--bert-base-uncased/snapshots/86b5e0934494bd15c9632b12f734a8a67f723594/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:05,944 >> Model config BertConfig {
+  "_name_or_path": "bert-base-uncased",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:06,162 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:06,165 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:06,167 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:06,167 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:06,167 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:06,167 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:06,167 >> loading file tokenizer.json from cache at None
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:06,168 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:06,169 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+03/18/2024 08:39:06 - WARNING - __main__ -   Process rank: 2, device: cuda:2, n_gpu: 1distributed training: True, 16-bits training: True
+03/18/2024 08:39:06 - WARNING - __main__ -   Process rank: 1, device: cuda:1, n_gpu: 1distributed training: True, 16-bits training: True
+03/18/2024 08:39:06 - WARNING - __main__ -   Process rank: 3, device: cuda:3, n_gpu: 1distributed training: True, 16-bits training: True
+[INFO|modeling_utils.py:3257] 2024-03-18 08:39:06,254 >> loading weights file model.safetensors from cache at /root/.cache/huggingface/hub/models--bert-base-uncased/snapshots/86b5e0934494bd15c9632b12f734a8a67f723594/model.safetensors
+[INFO|configuration_utils.py:845] 2024-03-18 08:39:06,262 >> Generate config GenerationConfig {
+  "pad_token_id": 0
+}
+
+[WARNING|modeling_utils.py:3982] 2024-03-18 08:39:06,638 >> Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForMaskedLM: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight', 'cls.seq_relationship.bias', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+[INFO|modeling_utils.py:4000] 2024-03-18 08:39:06,638 >> All the weights of BertForMaskedLM were initialized from the model checkpoint at bert-base-uncased.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use BertForMaskedLM for predictions without further training.
+[INFO|modeling_utils.py:3544] 2024-03-18 08:39:06,865 >> Generation config file not found, using a generation config created from the model config.
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:07,106 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:07,108 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|modeling_utils.py:3257] 2024-03-18 08:39:07,168 >> loading weights file pytorch_model.bin from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/pytorch_model.bin
+/root/con_venv/lib/python3.9/site-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForMaskedLM: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight', 'cls.seq_relationship.bias', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForMaskedLM: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight', 'cls.seq_relationship.bias', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForMaskedLM: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight', 'cls.seq_relationship.bias', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+[INFO|modeling_utils.py:3982] 2024-03-18 08:39:07,591 >> Some weights of the model checkpoint at tunib/electra-ko-en-base were not used when initializing ElectraModel: ['discriminator_predictions.dense.bias', 'discriminator_predictions.dense.weight', 'discriminator_predictions.dense_prediction.bias', 'discriminator_predictions.dense_prediction.weight']
+- This IS expected if you are initializing ElectraModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing ElectraModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+[INFO|modeling_utils.py:4000] 2024-03-18 08:39:07,591 >> All the weights of ElectraModel were initialized from the model checkpoint at tunib/electra-ko-en-base.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use ElectraModel for predictions without further training.
+[INFO|modeling_utils.py:1875] 2024-03-18 08:39:07,632 >> You are resizing the embedding layer without providing a `pad_to_multiple_of` parameter. This means that the new embedding dimension will be 61790. This might induce some performance reduction as *Tensor Cores* will not be available. For more details about this, or help on choosing the correct value for resizing, refer to this guide: https://docs.nvidia.com/deeplearning/performance/dl-performance-matrix-multiplication/index.html#requirements-tc
+/root/con_venv/lib/python3.9/site-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+/root/con_venv/lib/python3.9/site-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+/root/con_venv/lib/python3.9/site-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[111474, 111473, 111473, 83605]
+[642411, 642409, 642405, 642407, 642410, 642409, 642405, 642413, 642413, 642414]
+txt data : 176283, en txt data : 168329, ko txt data : 7954
+418025
+6424096
+6850075
+total ko data : 6850075, current en data : 168329, (ko - current en) data : 6681746
+when 90% en data, cul en size should be 61482346
+when 80% en data, cul en size should be 27231971
+when 70% en data, cul en size should be 15815179
+when 60% en data, cul en size should be 10106783
+when 50% en data, cul en size should be 6681746
+6681746
+/root/con_venv/lib/python3.9/site-packages/accelerate/accelerator.py:432: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead: 
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+03/18/2024 08:39:08 - WARNING - accelerate.utils.other -   Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[111474, 111473, 111473, 83605]
+[642411, 642409, 642405, 642407, 642410, 642409, 642405, 642413, 642413, 642414]
+txt data : 176283, en txt data : 168329, ko txt data : 7954
+418025
+6424096
+6850075
+total ko data : 6850075, current en data : 168329, (ko - current en) data : 6681746
+when 90% en data, cul en size should be 61482346
+when 80% en data, cul en size should be 27231971
+when 70% en data, cul en size should be 15815179
+when 60% en data, cul en size should be 10106783
+when 50% en data, cul en size should be 6681746
+6681746
+/root/con_venv/lib/python3.9/site-packages/accelerate/accelerator.py:432: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead: 
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+[nltk_data]   Package punkt is already up-to-date!
+[111474, 111473, 111473, 83605]
+[642411, 642409, 642405, 642407, 642410, 642409, 642405, 642413, 642413, 642414]
+txt data : 176283, en txt data : 168329, ko txt data : 7954
+418025
+6424096
+6850075
+total ko data : 6850075, current en data : 168329, (ko - current en) data : 6681746
+when 90% en data, cul en size should be 61482346
+when 80% en data, cul en size should be 27231971
+when 70% en data, cul en size should be 15815179
+when 60% en data, cul en size should be 10106783
+when 50% en data, cul en size should be 6681746
+6681746
+/root/con_venv/lib/python3.9/site-packages/accelerate/accelerator.py:432: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead: 
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[111474, 111473, 111473, 83605]
+[642411, 642409, 642405, 642407, 642410, 642409, 642405, 642413, 642413, 642414]
+txt data : 176283, en txt data : 168329, ko txt data : 7954
+418025
+6424096
+6850075
+total ko data : 6850075, current en data : 168329, (ko - current en) data : 6681746
+when 90% en data, cul en size should be 61482346
+when 80% en data, cul en size should be 27231971
+when 70% en data, cul en size should be 15815179
+when 60% en data, cul en size should be 10106783
+when 50% en data, cul en size should be 6681746
+6681746
+/root/con_venv/lib/python3.9/site-packages/accelerate/accelerator.py:432: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead: 
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+[INFO|trainer.py:601] 2024-03-18 08:39:09,779 >> Using auto half precision backend
+/root/con_venv/lib/python3.9/site-packages/transformers/trainer.py:1567: FutureWarning: `model_path` is deprecated and will be removed in a future version. Use `resume_from_checkpoint` instead.
+  warnings.warn(
+/root/con_venv/lib/python3.9/site-packages/transformers/trainer.py:1567: FutureWarning: `model_path` is deprecated and will be removed in a future version. Use `resume_from_checkpoint` instead.
+  warnings.warn(
+/root/con_venv/lib/python3.9/site-packages/transformers/trainer.py:1567: FutureWarning: `model_path` is deprecated and will be removed in a future version. Use `resume_from_checkpoint` instead.
+  warnings.warn(
+/root/con_venv/lib/python3.9/site-packages/transformers/trainer.py:1567: FutureWarning: `model_path` is deprecated and will be removed in a future version. Use `resume_from_checkpoint` instead.
+  warnings.warn(
+[INFO|trainer.py:1812] 2024-03-18 08:39:11,705 >> ***** Running training *****
+[INFO|trainer.py:1813] 2024-03-18 08:39:11,705 >>   Num examples = 10,960,123
+[INFO|trainer.py:1814] 2024-03-18 08:39:11,705 >>   Num Epochs = 8
+[INFO|trainer.py:1815] 2024-03-18 08:39:11,705 >>   Instantaneous batch size per device = 8
+[INFO|trainer.py:1818] 2024-03-18 08:39:11,705 >>   Total train batch size (w. parallel, distributed & accumulation) = 128
+[INFO|trainer.py:1819] 2024-03-18 08:39:11,706 >>   Gradient Accumulation steps = 4
+[INFO|trainer.py:1820] 2024-03-18 08:39:11,706 >>   Total optimization steps = 685,008
+[INFO|trainer.py:1821] 2024-03-18 08:39:11,706 >>   Number of trainable parameters = 147,735,134
+[INFO|integration_utils.py:722] 2024-03-18 08:39:11,866 >> Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+wandb: Currently logged in as: 3jp4rk. Use `wandb login --relogin` to force relogin
+Traceback (most recent call last):
+  File "/root/Condenser/run_pre_training.py", line 220, in <module>
+    main()
+  File "/root/Condenser/run_pre_training.py", line 190, in main
+    trainer.train(model_path=model_path)
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 1624, in train
+    return inner_training_loop(
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 1928, in _inner_training_loop
+    for step, inputs in enumerate(epoch_iterator):
+  File "/root/con_venv/lib/python3.9/site-packages/accelerate/data_loader.py", line 452, in __iter__
+    current_batch = next(dataloader_iter)
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1345, in _next_data
+    return self._process_data(data)
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "/root/con_venv/lib/python3.9/site-packages/torch/_utils.py", line 694, in reraise
+    raise exception
+TypeError: Caught TypeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/root/enko_dataset.py", line 338, in __getitem__
+    return self.get_data(self.train2full(idx))
+  File "/root/enko_dataset.py", line 375, in get_data
+    ds_pos, idx2 = find_in_list(data_len[ds], idx)
+TypeError: cannot unpack non-iterable NoneType object
+
+Traceback (most recent call last):
+  File "/root/Condenser/run_pre_training.py", line 220, in <module>
+    main()
+  File "/root/Condenser/run_pre_training.py", line 190, in main
+    trainer.train(model_path=model_path)
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 1624, in train
+    return inner_training_loop(
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 1928, in _inner_training_loop
+    for step, inputs in enumerate(epoch_iterator):
+  File "/root/con_venv/lib/python3.9/site-packages/accelerate/data_loader.py", line 452, in __iter__
+    current_batch = next(dataloader_iter)
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1345, in _next_data
+    return self._process_data(data)
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "/root/con_venv/lib/python3.9/site-packages/torch/_utils.py", line 694, in reraise
+    raise exception
+TypeError: Caught TypeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/root/enko_dataset.py", line 338, in __getitem__
+    return self.get_data(self.train2full(idx))
+  File "/root/enko_dataset.py", line 375, in get_data
+    ds_pos, idx2 = find_in_list(data_len[ds], idx)
+TypeError: cannot unpack non-iterable NoneType object
+
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /root/wandb/run-20240318_083913-wyciv2uu
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run confused-music-18
+wandb: ⭐️ View project at https://wandb.ai/3jp4rk/condenser-bert-pretrain
+wandb: 🚀 View run at https://wandb.ai/3jp4rk/condenser-bert-pretrain/runs/wyciv2uu
+  0%|          | 0/685008 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/root/Condenser/run_pre_training.py", line 220, in <module>
+    main()
+  File "/root/Condenser/run_pre_training.py", line 190, in main
+    trainer.train(model_path=model_path)
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 1624, in train
+    return inner_training_loop(
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 1928, in _inner_training_loop
+    for step, inputs in enumerate(epoch_iterator):
+  File "/root/con_venv/lib/python3.9/site-packages/accelerate/data_loader.py", line 452, in __iter__
+    current_batch = next(dataloader_iter)
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1345, in _next_data
+    return self._process_data(data)
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "/root/con_venv/lib/python3.9/site-packages/torch/_utils.py", line 694, in reraise
+    raise exception
+TypeError: Caught TypeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/root/enko_dataset.py", line 338, in __getitem__
+    return self.get_data(self.train2full(idx))
+  File "/root/enko_dataset.py", line 381, in get_data
+    total_token_len, ids = get_token_num(input, truncate=True)
+  File "/root/enko_dataset.py", line 74, in get_token_num
+    ids = tokenizer(
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 2829, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 2935, in _call_one
+    return self.encode_plus(
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 3008, in encode_plus
+    return self._encode_plus(
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/tokenization_utils_fast.py", line 576, in _encode_plus
+    batched_output = self._batch_encode_plus(
+TypeError: _batch_encode_plus() got an unexpected keyword argument 'kwargs'
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,800 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,800 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,802 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,802 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,802 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,803 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,803 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,803 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,803 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,803 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,803 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,803 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,803 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,803 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,803 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,803 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,804 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,804 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,805 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,806 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,807 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,807 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,807 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,807 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,807 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,807 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,807 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,808 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,808 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,808 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,809 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,810 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,810 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,810 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,810 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,811 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,811 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,811 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,811 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,812 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,812 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,812 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,812 >> loading file special_tokens_map.json from cache at None
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,812 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,812 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,812 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,812 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,813 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,813 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,813 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,813 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,813 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,813 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,813 >> loading file tokenizer.json from cache at None
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,813 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,813 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,813 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,813 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,813 >> loading file special_tokens_map.json from cache at None
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,813 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,813 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,813 >> loading file special_tokens_map.json from cache at None
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,813 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,813 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,813 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,814 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,814 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,814 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,814 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,814 >> loading file tokenizer.json from cache at None
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,814 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,814 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,814 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,814 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,814 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,814 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,815 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,815 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,815 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,815 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,815 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,815 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,815 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,815 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,815 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,815 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,815 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,815 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,815 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,816 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,816 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,816 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,816 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,816 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,816 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,816 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,817 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,817 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,817 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,817 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,817 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,817 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,817 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,817 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,817 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,818 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,818 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,819 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,820 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,821 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,822 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,822 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,822 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,822 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,822 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,823 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,825 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,825 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,826 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,826 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,826 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,828 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,828 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,829 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,829 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,829 >> loading file tokenizer.json from cache at None
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,829 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,829 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,829 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,829 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,829 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,829 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,830 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,830 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,830 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,830 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,830 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,830 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,830 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,830 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,830 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,830 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,830 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,830 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,830 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,830 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,830 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,831 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,831 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,831 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,832 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,832 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,832 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,832 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,833 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,832 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,834 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,834 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,834 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,835 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,835 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,836 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,836 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,836 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,836 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,836 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,836 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,836 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,836 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,836 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,836 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,836 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,836 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,836 >> loading file tokenizer.json from cache at None
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,836 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,836 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,837 >> loading file special_tokens_map.json from cache at None
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,837 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,837 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,837 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,837 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,837 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,838 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,838 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,838 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,838 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,838 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,838 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,838 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,839 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,839 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,839 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,839 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,839 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,839 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,840 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,840 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,841 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,841 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,843 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,845 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,845 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,845 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,845 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,845 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,845 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,847 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,890 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,893 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,894 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,894 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,894 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,894 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:16,894 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,895 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,897 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,914 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,915 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,915 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,916 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,923 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,924 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,926 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,927 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,934 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,935 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,937 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,938 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,939 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,940 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,944 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,945 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,960 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,960 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,961 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,961 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,971 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,972 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,974 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,975 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,975 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,975 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,976 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,976 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,976 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,978 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,981 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,981 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,982 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,982 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,982 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,984 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:16,988 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:16,990 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,003 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,005 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,008 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,010 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,025 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,026 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,034 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,036 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,036 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,037 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+Traceback (most recent call last):
+  File "/root/Condenser/run_pre_training.py", line 220, in <module>
+    main()
+  File "/root/Condenser/run_pre_training.py", line 190, in main
+    trainer.train(model_path=model_path)
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 1624, in train
+    return inner_training_loop(
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 1928, in _inner_training_loop
+    for step, inputs in enumerate(epoch_iterator):
+  File "/root/con_venv/lib/python3.9/site-packages/accelerate/data_loader.py", line 452, in __iter__
+    current_batch = next(dataloader_iter)
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1345, in _next_data
+    return self._process_data(data)
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "/root/con_venv/lib/python3.9/site-packages/torch/_utils.py", line 694, in reraise
+    raise exception
+TypeError: Caught TypeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/root/con_venv/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/root/enko_dataset.py", line 338, in __getitem__
+    return self.get_data(self.train2full(idx))
+  File "/root/enko_dataset.py", line 381, in get_data
+    total_token_len, ids = get_token_num(input, truncate=True)
+  File "/root/enko_dataset.py", line 74, in get_token_num
+    ids = tokenizer(
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 2829, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 2935, in _call_one
+    return self.encode_plus(
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 3008, in encode_plus
+    return self._encode_plus(
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/tokenization_utils_fast.py", line 576, in _encode_plus
+    batched_output = self._batch_encode_plus(
+TypeError: _batch_encode_plus() got an unexpected keyword argument 'kwargs'
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,209 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,210 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,210 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,210 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,210 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,210 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,210 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,211 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,211 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,212 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,215 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,216 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,216 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,216 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,216 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,216 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,217 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,218 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,227 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,228 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,228 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,228 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,228 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,228 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,228 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,228 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,229 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,284 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,286 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,287 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,287 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,287 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,287 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,287 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,287 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,289 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,289 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,290 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,304 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,306 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,307 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,309 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,310 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,310 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,310 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,310 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,310 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,310 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,311 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,312 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,312 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,313 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,313 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,313 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,313 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,314 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,314 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,316 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,323 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,324 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,376 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,377 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,382 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,383 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,389 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,390 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,750 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,752 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,753 >> loading file vocab.txt from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/vocab.txt
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,753 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,753 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,753 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2046] 2024-03-18 08:39:17,753 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/tokenizer_config.json
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,753 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,755 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|configuration_utils.py:728] 2024-03-18 08:39:17,818 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--tunib--electra-ko-en-base/snapshots/8004b116b7cac4b0ade59d1da0e58641da725788/config.json
+[INFO|configuration_utils.py:791] 2024-03-18 08:39:17,819 >> Model config ElectraConfig {
+  "_name_or_path": "tunib/electra-ko-en-base",
+  "architectures": [
+    "ElectraForPreTraining"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "embedding_size": 768,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "electra",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "summary_activation": "gelu",
+  "summary_last_dropout": 0.1,
+  "summary_type": "first",
+  "summary_use_proj": true,
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[2024-03-18 08:39:17,850] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 504121 closing signal SIGTERM
+[2024-03-18 08:39:17,915] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 1) local_rank: 1 (pid: 504122) of binary: /root/con_venv/bin/python3.9
+Traceback (most recent call last):
+  File "/root/con_venv/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/root/con_venv/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 346, in wrapper
+    return f(*args, **kwargs)
+  File "/root/con_venv/lib/python3.9/site-packages/torch/distributed/run.py", line 806, in main
+    run(args)
+  File "/root/con_venv/lib/python3.9/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/root/con_venv/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/root/con_venv/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+run_pre_training.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2024-03-18_08:39:17
+  host      : ab6613b10048
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 504123)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2024-03-18_08:39:17
+  host      : ab6613b10048
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 504124)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-03-18_08:39:17
+  host      : ab6613b10048
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 504122)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+wandb: - 0.028 MB of 0.028 MB uploadedwandb: \ 0.038 MB of 0.038 MB uploadedwandb: 🚀 View run confused-music-18 at: https://wandb.ai/3jp4rk/condenser-bert-pretrain/runs/wyciv2uu
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240318_083913-wyciv2uu/logs

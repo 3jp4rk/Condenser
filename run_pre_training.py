@@ -140,7 +140,7 @@ def main():
     _condenser_cls = CONDENSER_TYPE_MAP[model_args.model_type]
     if model_args.model_name_or_path:
         model = _condenser_cls.from_pretrained(
-            tokenizer, # pass for resize_token_embeddings()
+            # tokenizer, # pass for resize_token_embeddings()
             model_args, data_args, training_args,
             model_args.model_name_or_path,
             from_tf=bool(".ckpt" in model_args.model_name_or_path),

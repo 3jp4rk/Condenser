@@ -1,0 +1,289 @@
+[2024-03-27 18:25:01,425] torch.distributed.run: [WARNING] 
+[2024-03-27 18:25:01,425] torch.distributed.run: [WARNING] *****************************************
+[2024-03-27 18:25:01,425] torch.distributed.run: [WARNING] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+[2024-03-27 18:25:01,425] torch.distributed.run: [WARNING] *****************************************
+03/27/2024 18:25:04 - WARNING - __main__ -   Process rank: 3, device: cuda:3, n_gpu: 1distributed training: True, 16-bits training: False
+03/27/2024 18:25:04 - WARNING - __main__ -   Process rank: 0, device: cuda:0, n_gpu: 1distributed training: True, 16-bits training: False
+03/27/2024 18:25:04 - INFO - __main__ -   Training/evaluation parameters CoCondenserPreTrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+cache_chunk_size=-1,
+data_seed=None,
+dataloader_drop_last=True,
+dataloader_num_workers=32,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=20000.0,
+evaluation_strategy=no,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0001,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=co_condenser_pretrain/runs/Mar27_18-25-04_afa8263c8862,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=1.0,
+logging_strategy=steps,
+lr_scheduler_kwargs={},
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_cuda=False,
+num_train_epochs=8.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=co_condenser_pretrain,
+overwrite_output_dir=True,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=16,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=False,
+report_to=['wandb'],
+resume_from_checkpoint=None,
+run_name=co_condenser_pretrain,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=20000,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+split_batches=None,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.1,
+warmup_steps=0,
+weight_decay=0.01,
+)
+[INFO|configuration_utils.py:724] 2024-03-27 18:25:04,448 >> loading configuration file /root/condenser_pretrain/checkpoint-260000/config.json
+[INFO|configuration_utils.py:789] 2024-03-27 18:25:04,449 >> Model config BertConfig {
+  "_name_or_path": "/root/condenser_pretrain/checkpoint-260000/",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "torch_dtype": "float32",
+  "transformers_version": "4.39.1",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2082] 2024-03-27 18:25:04,451 >> loading file vocab.txt
+[INFO|tokenization_utils_base.py:2082] 2024-03-27 18:25:04,451 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2082] 2024-03-27 18:25:04,451 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2082] 2024-03-27 18:25:04,451 >> loading file tokenizer_config.json
+[INFO|tokenization_utils_base.py:2082] 2024-03-27 18:25:04,451 >> loading file tokenizer.json
+[INFO|modeling_utils.py:3280] 2024-03-27 18:25:04,515 >> loading weights file /root/condenser_pretrain/checkpoint-260000/model.safetensors
+[INFO|configuration_utils.py:928] 2024-03-27 18:25:04,522 >> Generate config GenerationConfig {
+  "pad_token_id": 0
+}
+
+[INFO|modeling_utils.py:4024] 2024-03-27 18:25:05,002 >> All model checkpoint weights were used when initializing BertForMaskedLM.
+
+[INFO|modeling_utils.py:4032] 2024-03-27 18:25:05,002 >> All the weights of BertForMaskedLM were initialized from the model checkpoint at /root/condenser_pretrain/checkpoint-260000/.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use BertForMaskedLM for predictions without further training.
+[INFO|configuration_utils.py:881] 2024-03-27 18:25:05,004 >> loading configuration file /root/condenser_pretrain/checkpoint-260000/generation_config.json
+[INFO|configuration_utils.py:928] 2024-03-27 18:25:05,004 >> Generate config GenerationConfig {
+  "pad_token_id": 0
+}
+
+03/27/2024 18:25:05 - WARNING - __main__ -   Process rank: 1, device: cuda:1, n_gpu: 1distributed training: True, 16-bits training: False
+03/27/2024 18:25:05 - WARNING - __main__ -   Process rank: 2, device: cuda:2, n_gpu: 1distributed training: True, 16-bits training: False
+03/27/2024 18:25:05 - INFO - modeling -   loading extra weights from local files
+-------------------------------------------
+loading json . . .
+-------------------------------------------
+loading json . . .
+-------------------------------------------
+loading json . . .
+-------------------------------------------
+loading json . . .
+en_index.json load complete! 284.1395649909973 seconds took.
+en_index.json load complete! 286.7674603462219 seconds took.
+en_index.json load complete! 293.6428973674774 seconds took.
+en_index.json load complete! 302.2525279521942 seconds took.
+ko_index.json load complete! 503.664014339447 seconds took.
+/root/con_venv/lib/python3.9/site-packages/accelerate/accelerator.py:432: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead: 
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+ko_index.json load complete! 511.8756148815155 seconds took.
+03/27/2024 18:38:21 - INFO - trainer -   Initializing Gradient Cache Trainer
+/root/con_venv/lib/python3.9/site-packages/accelerate/accelerator.py:432: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead: 
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+Traceback (most recent call last):
+  File "/root/Condenser/run_co_pre_training.py", line 211, in <module>
+    main()
+  File "/root/Condenser/run_co_pre_training.py", line 184, in main
+    trainer = Trainer(
+  File "/root/Condenser/trainer.py", line 102, in __init__
+    super(CondenserPreTrainer, self).__init__(*args, **kwargs)
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 560, in __init__
+    if train_dataset is not None and not has_length(train_dataset) and args.max_steps <= 0:
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/trainer_utils.py", line 679, in has_length
+    return len(dataset) is not None
+ValueError: __len__() should return >= 0
+Traceback (most recent call last):
+  File "/root/Condenser/run_co_pre_training.py", line 211, in <module>
+    main()
+  File "/root/Condenser/run_co_pre_training.py", line 184, in main
+    trainer = Trainer(
+  File "/root/Condenser/trainer.py", line 102, in __init__
+    super(CondenserPreTrainer, self).__init__(*args, **kwargs)
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 560, in __init__
+    if train_dataset is not None and not has_length(train_dataset) and args.max_steps <= 0:
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/trainer_utils.py", line 679, in has_length
+    return len(dataset) is not None
+ValueError: __len__() should return >= 0
+ko_index.json load complete! 510.5772166252136 seconds took.
+/root/con_venv/lib/python3.9/site-packages/accelerate/accelerator.py:432: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead: 
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+Traceback (most recent call last):
+  File "/root/Condenser/run_co_pre_training.py", line 211, in <module>
+    main()
+  File "/root/Condenser/run_co_pre_training.py", line 184, in main
+    trainer = Trainer(
+  File "/root/Condenser/trainer.py", line 102, in __init__
+    super(CondenserPreTrainer, self).__init__(*args, **kwargs)
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 560, in __init__
+    if train_dataset is not None and not has_length(train_dataset) and args.max_steps <= 0:
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/trainer_utils.py", line 679, in has_length
+    return len(dataset) is not None
+ValueError: __len__() should return >= 0
+ko_index.json load complete! 514.4381103515625 seconds took.
+/root/con_venv/lib/python3.9/site-packages/accelerate/accelerator.py:432: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead: 
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+Traceback (most recent call last):
+  File "/root/Condenser/run_co_pre_training.py", line 211, in <module>
+    main()
+  File "/root/Condenser/run_co_pre_training.py", line 184, in main
+    trainer = Trainer(
+  File "/root/Condenser/trainer.py", line 102, in __init__
+    super(CondenserPreTrainer, self).__init__(*args, **kwargs)
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 560, in __init__
+    if train_dataset is not None and not has_length(train_dataset) and args.max_steps <= 0:
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/trainer_utils.py", line 679, in has_length
+    return len(dataset) is not None
+ValueError: __len__() should return >= 0
+[2024-03-27 18:47:42,835] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 40558 closing signal SIGTERM
+[2024-03-27 18:47:42,835] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 40559 closing signal SIGTERM
+[2024-03-27 18:47:42,836] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 40560 closing signal SIGTERM
+[2024-03-27 18:47:45,987] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 1) local_rank: 0 (pid: 40557) of binary: /root/con_venv/bin/python3.9
+Traceback (most recent call last):
+  File "/root/con_venv/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/root/con_venv/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 346, in wrapper
+    return f(*args, **kwargs)
+  File "/root/con_venv/lib/python3.9/site-packages/torch/distributed/run.py", line 806, in main
+    run(args)
+  File "/root/con_venv/lib/python3.9/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/root/con_venv/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/root/con_venv/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+run_co_pre_training.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-03-27_18:47:42
+  host      : afa8263c8862
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 40557)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

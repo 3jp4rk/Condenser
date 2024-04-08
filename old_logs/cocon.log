@@ -1,0 +1,282 @@
+[2024-03-31 08:34:41,956] torch.distributed.run: [WARNING] 
+[2024-03-31 08:34:41,956] torch.distributed.run: [WARNING] *****************************************
+[2024-03-31 08:34:41,956] torch.distributed.run: [WARNING] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+[2024-03-31 08:34:41,956] torch.distributed.run: [WARNING] *****************************************
+wandb: Currently logged in as: 3jp4rk. Use `wandb login --relogin` to force relogin
+wandb: Currently logged in as: 3jp4rk. Use `wandb login --relogin` to force relogin
+wandb: Currently logged in as: 3jp4rk. Use `wandb login --relogin` to force relogin
+wandb: Currently logged in as: 3jp4rk. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.16.5
+wandb: Run data is saved locally in /root/Condenser/wandb/run-20240331_083445-rtfmjdlo
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run summer-pyramid-92
+wandb: ⭐️ View project at https://wandb.ai/3jp4rk/Condenser
+wandb: 🚀 View run at https://wandb.ai/3jp4rk/Condenser/runs/rtfmjdlo/workspace
+wandb: Tracking run with wandb version 0.16.5
+wandb: Run data is saved locally in /root/Condenser/wandb/run-20240331_083445-hwhj47br
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run firm-sky-93
+wandb: ⭐️ View project at https://wandb.ai/3jp4rk/Condenser
+wandb: 🚀 View run at https://wandb.ai/3jp4rk/Condenser/runs/hwhj47br/workspace
+wandb: Tracking run with wandb version 0.16.5
+wandb: Run data is saved locally in /root/Condenser/wandb/run-20240331_083445-mc6e9bei
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run fresh-firefly-94
+wandb: ⭐️ View project at https://wandb.ai/3jp4rk/Condenser
+wandb: 🚀 View run at https://wandb.ai/3jp4rk/Condenser/runs/mc6e9bei/workspace
+wandb: Tracking run with wandb version 0.16.5
+wandb: Run data is saved locally in /root/Condenser/wandb/run-20240331_083445-vid0dfxd
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run fragrant-snowflake-95
+wandb: ⭐️ View project at https://wandb.ai/3jp4rk/Condenser
+wandb: 🚀 View run at https://wandb.ai/3jp4rk/Condenser/runs/vid0dfxd/workspace
+03/31/2024 08:34:46 - WARNING - __main__ -   Process rank: 0, device: cuda:0, n_gpu: 1distributed training: True, 16-bits training: False
+03/31/2024 08:34:46 - INFO - __main__ -   Training/evaluation parameters CoCondenserPreTrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+cache_chunk_size=-1,
+data_seed=None,
+dataloader_drop_last=True,
+dataloader_num_workers=4,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=500,
+evaluation_strategy=steps,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0001,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=cocondenser_pretrain/runs/Mar31_08-34-46_afa8263c8862,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=1.0,
+logging_strategy=steps,
+lr_scheduler_kwargs={},
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_cuda=False,
+num_train_epochs=20.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=cocondenser_pretrain,
+overwrite_output_dir=True,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=False,
+report_to=['wandb'],
+resume_from_checkpoint=None,
+run_name=cocondenser_pretrain,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=1000,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+split_batches=None,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.1,
+warmup_steps=0,
+weight_decay=0.01,
+)
+[INFO|configuration_utils.py:724] 2024-03-31 08:34:46,291 >> loading configuration file /root/condenser_pretrain/checkpoint-200000/config.json
+[INFO|configuration_utils.py:789] 2024-03-31 08:34:46,292 >> Model config BertConfig {
+  "_name_or_path": "/root/condenser_pretrain/checkpoint-200000",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "torch_dtype": "float32",
+  "transformers_version": "4.39.1",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2082] 2024-03-31 08:34:46,293 >> loading file vocab.txt
+[INFO|tokenization_utils_base.py:2082] 2024-03-31 08:34:46,293 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2082] 2024-03-31 08:34:46,293 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2082] 2024-03-31 08:34:46,294 >> loading file tokenizer_config.json
+[INFO|tokenization_utils_base.py:2082] 2024-03-31 08:34:46,294 >> loading file tokenizer.json
+03/31/2024 08:34:46 - WARNING - __main__ -   Process rank: 1, device: cuda:1, n_gpu: 1distributed training: True, 16-bits training: False
+[INFO|modeling_utils.py:3280] 2024-03-31 08:34:46,368 >> loading weights file /root/condenser_pretrain/checkpoint-200000/model.safetensors
+[INFO|configuration_utils.py:928] 2024-03-31 08:34:46,377 >> Generate config GenerationConfig {
+  "pad_token_id": 0
+}
+
+03/31/2024 08:34:46 - WARNING - __main__ -   Process rank: 3, device: cuda:3, n_gpu: 1distributed training: True, 16-bits training: False
+03/31/2024 08:34:46 - WARNING - __main__ -   Process rank: 2, device: cuda:2, n_gpu: 1distributed training: True, 16-bits training: False
+[INFO|modeling_utils.py:4024] 2024-03-31 08:34:46,925 >> All model checkpoint weights were used when initializing BertForMaskedLM.
+
+[INFO|modeling_utils.py:4032] 2024-03-31 08:34:46,925 >> All the weights of BertForMaskedLM were initialized from the model checkpoint at /root/condenser_pretrain/checkpoint-200000.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use BertForMaskedLM for predictions without further training.
+[INFO|configuration_utils.py:881] 2024-03-31 08:34:46,928 >> loading configuration file /root/condenser_pretrain/checkpoint-200000/generation_config.json
+[INFO|configuration_utils.py:928] 2024-03-31 08:34:46,929 >> Generate config GenerationConfig {
+  "pad_token_id": 0
+}
+
+03/31/2024 08:34:47 - INFO - modeling -   loading extra weights from local files
+-------------------------------------------
+loading json . . .
+-------------------------------------------
+loading json . . .
+-------------------------------------------
+loading json . . .
+-------------------------------------------
+loading json . . .
+/root/new_index_diet_pruned.json load complete! 545.8214206695557 seconds took.
+Traceback (most recent call last):
+  File "/root/Condenser/run_co_pre_training.py", line 218, in <module>
+    main()
+  File "/root/Condenser/run_co_pre_training.py", line 175, in main
+    train_set = ComplicatedDataset(
+TypeError: __init__() got an unexpected keyword argument 'train_ration'
+wandb: - 0.028 MB of 0.028 MB uploadedwandb: \ 0.028 MB of 0.030 MB uploadedwandb: 🚀 View run fresh-firefly-94 at: https://wandb.ai/3jp4rk/Condenser/runs/mc6e9bei/workspace
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240331_083445-mc6e9bei/logs
+/root/new_index_diet_pruned.json load complete! 559.128048658371 seconds took.
+Traceback (most recent call last):
+  File "/root/Condenser/run_co_pre_training.py", line 218, in <module>
+    main()
+  File "/root/Condenser/run_co_pre_training.py", line 175, in main
+    train_set = ComplicatedDataset(
+TypeError: __init__() got an unexpected keyword argument 'train_ration'
+wandb: - 0.028 MB of 0.028 MB uploadedwandb: \ 0.028 MB of 0.035 MB uploadedwandb: 🚀 View run summer-pyramid-92 at: https://wandb.ai/3jp4rk/Condenser/runs/rtfmjdlo/workspace
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240331_083445-rtfmjdlo/logs
+/root/new_index_diet_pruned.json load complete! 563.5411932468414 seconds took.
+Traceback (most recent call last):
+  File "/root/Condenser/run_co_pre_training.py", line 218, in <module>
+    main()
+  File "/root/Condenser/run_co_pre_training.py", line 175, in main
+    train_set = ComplicatedDataset(
+TypeError: __init__() got an unexpected keyword argument 'train_ration'
+wandb: - 0.028 MB of 0.028 MB uploaded/root/new_index_diet_pruned.json load complete! 568.644749879837 seconds took.
+Traceback (most recent call last):
+  File "/root/Condenser/run_co_pre_training.py", line 218, in <module>
+    main()
+  File "/root/Condenser/run_co_pre_training.py", line 175, in main
+    train_set = ComplicatedDataset(
+TypeError: __init__() got an unexpected keyword argument 'train_ration'
+wandb: \ 0.028 MB of 0.030 MB uploadedwandb: 🚀 View run fragrant-snowflake-95 at: https://wandb.ai/3jp4rk/Condenser/runs/vid0dfxd/workspace
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240331_083445-vid0dfxd/logs
+wandb: - 0.028 MB of 0.028 MB uploadedwandb: \ 0.028 MB of 0.030 MB uploadedwandb: | 0.030 MB of 0.030 MB uploadedwandb: 🚀 View run firm-sky-93 at: https://wandb.ai/3jp4rk/Condenser/runs/hwhj47br/workspace
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240331_083445-hwhj47br/logs
+[2024-03-31 08:45:22,038] torch.distributed.elastic.agent.server.api: [WARNING] Received Signals.SIGTERM death signal, shutting down workers
+[2024-03-31 08:45:22,039] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 460753 closing signal SIGTERM
+[2024-03-31 08:45:22,039] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 460754 closing signal SIGTERM
+[2024-03-31 08:45:22,040] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 460755 closing signal SIGTERM
+[2024-03-31 08:45:22,040] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 460757 closing signal SIGTERM
+Traceback (most recent call last):
+  File "/root/con_venv/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/root/con_venv/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 346, in wrapper
+    return f(*args, **kwargs)
+  File "/root/con_venv/lib/python3.9/site-packages/torch/distributed/run.py", line 806, in main
+    run(args)
+  File "/root/con_venv/lib/python3.9/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/root/con_venv/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/root/con_venv/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 255, in launch_agent
+    result = agent.run()
+  File "/root/con_venv/lib/python3.9/site-packages/torch/distributed/elastic/metrics/api.py", line 124, in wrapper
+    result = f(*args, **kwargs)
+  File "/root/con_venv/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/api.py", line 736, in run
+    result = self._invoke_run(role)
+  File "/root/con_venv/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/api.py", line 877, in _invoke_run
+    time.sleep(monitor_interval)
+  File "/root/con_venv/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 62, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 460671 got signal: 15

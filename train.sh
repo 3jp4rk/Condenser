@@ -1,12 +1,14 @@
 torchrun --nproc_per_node 4 run_pre_training.py \
-  --output_dir "./condenser_pretrain" \
+  --output_dir "./condenser_pretrain_" \
   --model_name_or_path bert-base-uncased \
   --tokenizer_name tunib/electra-ko-en-base \
   --do_train \
+  --do_eval \
   --report_to "wandb" \
   --logging_steps 1 \
   --remove_unused_columns false \
-  --save_steps 20000 \
+  --save_steps 10 \
+  --eval_steps 100 \
   --per_device_train_batch_size 16 \
   --gradient_accumulation_steps 4 \
   --warmup_ratio 0.1 \

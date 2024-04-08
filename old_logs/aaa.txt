@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/root/save_model.py", line 8, in <module>
+    bert_tok = AutoTokenizer.from_pretrained("bert-base-uncased")
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/models/auto/tokenization_auto.py", line 855, in from_pretrained
+    return tokenizer_class_fast.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+  File "/root/con_venv/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 2070, in from_pretrained
+    raise EnvironmentError(
+OSError: Can't load tokenizer for 'bert-base-uncased'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'bert-base-uncased' is the correct path to a directory containing all relevant files for a BertTokenizerFast tokenizer.
