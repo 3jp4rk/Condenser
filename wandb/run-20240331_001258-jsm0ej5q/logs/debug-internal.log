@@ -1,0 +1,331 @@
+2024-03-31 00:12:58,119 INFO    StreamThr :3322229 [internal.py:wandb_internal():86] W&B internal server running at pid: 3322229, started at: 2024-03-31 00:12:58.119135
+2024-03-31 00:12:58,123 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: status
+2024-03-31 00:12:58,124 INFO    WriterThread:3322229 [datastore.py:open_for_write():87] open: /home/ubuntu/ejpark/Condenser/wandb/run-20240331_001258-jsm0ej5q/run-jsm0ej5q.wandb
+2024-03-31 00:12:58,125 DEBUG   SenderThread:3322229 [sender.py:send():379] send: header
+2024-03-31 00:12:58,152 DEBUG   SenderThread:3322229 [sender.py:send():379] send: run
+2024-03-31 00:13:03,153 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:13:03,885 INFO    SenderThread:3322229 [dir_watcher.py:__init__():211] watching files in: /home/ubuntu/ejpark/Condenser/wandb/run-20240331_001258-jsm0ej5q/files
+2024-03-31 00:13:03,886 INFO    SenderThread:3322229 [sender.py:_start_run_threads():1124] run started: jsm0ej5q with start time 1711811578.118794
+2024-03-31 00:13:03,886 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: status_report
+2024-03-31 00:13:03,896 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: check_version
+2024-03-31 00:13:03,896 DEBUG   SenderThread:3322229 [sender.py:send_request():406] send_request: check_version
+2024-03-31 00:13:04,008 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: run_start
+2024-03-31 00:13:05,298 DEBUG   HandlerThread:3322229 [system_info.py:__init__():26] System info init
+2024-03-31 00:13:05,299 DEBUG   HandlerThread:3322229 [system_info.py:__init__():41] System info init done
+2024-03-31 00:13:05,299 INFO    HandlerThread:3322229 [system_monitor.py:start():194] Starting system monitor
+2024-03-31 00:13:05,299 INFO    SystemMonitor:3322229 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-03-31 00:13:05,299 INFO    HandlerThread:3322229 [system_monitor.py:probe():214] Collecting system info
+2024-03-31 00:13:05,300 INFO    SystemMonitor:3322229 [interfaces.py:start():190] Started cpu monitoring
+2024-03-31 00:13:05,300 INFO    SystemMonitor:3322229 [interfaces.py:start():190] Started disk monitoring
+2024-03-31 00:13:05,302 INFO    SystemMonitor:3322229 [interfaces.py:start():190] Started gpu monitoring
+2024-03-31 00:13:05,305 INFO    SystemMonitor:3322229 [interfaces.py:start():190] Started memory monitoring
+2024-03-31 00:13:05,306 INFO    SystemMonitor:3322229 [interfaces.py:start():190] Started network monitoring
+2024-03-31 00:13:11,115 DEBUG   HandlerThread:3322229 [system_info.py:probe():150] Probing system
+2024-03-31 00:13:11,116 DEBUG   HandlerThread:3322229 [system_info.py:_probe_git():135] Probing git
+2024-03-31 00:13:11,137 DEBUG   HandlerThread:3322229 [system_info.py:_probe_git():143] Probing git done
+2024-03-31 00:13:11,137 DEBUG   HandlerThread:3322229 [system_info.py:probe():198] Probing system done
+2024-03-31 00:13:11,137 DEBUG   HandlerThread:3322229 [system_monitor.py:probe():223] {'os': 'Linux-5.15.0-86-generic-x86_64-with-glibc2.35', 'python': '3.9.18', 'heartbeatAt': '2024-03-30T15:13:11.115878', 'startedAt': '2024-03-30T15:12:58.114179', 'docker': None, 'cuda': None, 'args': ('--output_dir', 'co_condenser_pretrain', '--model_name_or_path', '/home/ubuntu/ejpark/checkpoint-240000/', '--do_train', '--report_to', 'wandb', '--logging_steps', '1', '--remove_unused_columns', 'false', '--save_steps', '20000', '--eval_steps', '5000', '--model_type', 'bert', '--per_device_train_batch_size', '32', '--gradient_accumulation_steps', '1', '--warmup_ratio', '0.1', '--learning_rate', '1e-4', '--num_train_epochs', '8', '--dataloader_drop_last', '--overwrite_output_dir', '--dataloader_num_workers', '4', '--n_head_layers', '2', '--skip_from', '6', '--max_seq_length', '512', '--weight_decay', '0.01', '--late_mlm'), 'state': 'running', 'program': '/home/ubuntu/ejpark/Condenser/run_co_pre_training.py', 'codePathLocal': 'run_co_pre_training.py', 'codePath': 'run_co_pre_training.py', 'git': {'remote': 'https://github.com/3jp4rk/Condenser.git', 'commit': 'a3a479898881d3cabac5b19dcb0e3ba55cebd278'}, 'email': 'mari970@naver.com', 'root': '/home/ubuntu/ejpark/Condenser', 'host': 'gpu-1', 'username': 'ubuntu', 'executable': '/home/ubuntu/ejpark/con_venv/bin/python3.9', 'cpu_count': 48, 'cpu_count_logical': 48, 'cpu_freq': {'current': 2794.75, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}], 'disk': {'/': {'total': 193.6498260498047, 'used': 98.02443313598633}}, 'gpu': 'NVIDIA A100-SXM4-80GB', 'gpu_count': 4, 'gpu_devices': [{'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}], 'memory': {'total': 885.4374961853027}}
+2024-03-31 00:13:11,137 INFO    HandlerThread:3322229 [system_monitor.py:probe():224] Finished collecting system info
+2024-03-31 00:13:11,137 INFO    HandlerThread:3322229 [system_monitor.py:probe():227] Publishing system info
+2024-03-31 00:13:11,138 INFO    HandlerThread:3322229 [system_monitor.py:probe():229] Finished publishing system info
+2024-03-31 00:13:11,140 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: status_report
+2024-03-31 00:13:11,140 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:13:11,141 DEBUG   SenderThread:3322229 [sender.py:send():379] send: files
+2024-03-31 00:13:11,141 INFO    SenderThread:3322229 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2024-03-31 00:13:11,241 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: python_packages
+2024-03-31 00:13:11,241 DEBUG   SenderThread:3322229 [sender.py:send_request():406] send_request: python_packages
+2024-03-31 00:13:11,242 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-31 00:13:11,242 DEBUG   SenderThread:3322229 [sender.py:send_request():406] send_request: stop_status
+2024-03-31 00:13:11,244 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-31 00:13:11,557 DEBUG   SenderThread:3322229 [sender.py:send():379] send: telemetry
+2024-03-31 00:13:11,889 INFO    Thread-12 :3322229 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ubuntu/ejpark/Condenser/wandb/run-20240331_001258-jsm0ej5q/files/output.log
+2024-03-31 00:13:11,889 INFO    Thread-12 :3322229 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ubuntu/ejpark/Condenser/wandb/run-20240331_001258-jsm0ej5q/files/requirements.txt
+2024-03-31 00:13:11,889 INFO    Thread-12 :3322229 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ubuntu/ejpark/Condenser/wandb/run-20240331_001258-jsm0ej5q/files/wandb-metadata.json
+2024-03-31 00:13:11,957 INFO    wandb-upload_0:3322229 [upload_job.py:push():131] Uploaded file /tmp/tmplvc2mdnjwandb/9jzmkt7w-wandb-metadata.json
+2024-03-31 00:13:13,888 INFO    Thread-12 :3322229 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ubuntu/ejpark/Condenser/wandb/run-20240331_001258-jsm0ej5q/files/output.log
+2024-03-31 00:13:14,558 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: status_report
+2024-03-31 00:13:19,559 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: status_report
+2024-03-31 00:13:24,559 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: status_report
+2024-03-31 00:13:29,565 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: status_report
+2024-03-31 00:13:29,892 INFO    Thread-12 :3322229 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ubuntu/ejpark/Condenser/wandb/run-20240331_001258-jsm0ej5q/files/config.yaml
+2024-03-31 00:13:34,769 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: status_report
+2024-03-31 00:13:39,375 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:13:39,420 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-31 00:13:39,420 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:13:39,769 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: status_report
+2024-03-31 00:13:44,376 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:13:44,770 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: status_report
+2024-03-31 00:13:49,932 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:13:50,000 INFO    Thread-12 :3322229 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ubuntu/ejpark/Condenser/wandb/run-20240331_001258-jsm0ej5q/files/output.log
+2024-03-31 00:13:50,680 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: status_report
+2024-03-31 00:13:52,001 INFO    Thread-12 :3322229 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ubuntu/ejpark/Condenser/wandb/run-20240331_001258-jsm0ej5q/files/output.log
+2024-03-31 00:13:52,485 DEBUG   SenderThread:3322229 [sender.py:send():379] send: exit
+2024-03-31 00:13:52,485 INFO    SenderThread:3322229 [sender.py:send_exit():586] handling exit code: 0
+2024-03-31 00:13:52,485 INFO    SenderThread:3322229 [sender.py:send_exit():588] handling runtime: 48
+2024-03-31 00:13:52,485 INFO    SenderThread:3322229 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-03-31 00:13:52,486 INFO    SenderThread:3322229 [sender.py:send_exit():594] send defer
+2024-03-31 00:13:52,486 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: defer
+2024-03-31 00:13:52,486 INFO    HandlerThread:3322229 [handler.py:handle_request_defer():172] handle defer: 0
+2024-03-31 00:13:52,486 DEBUG   SenderThread:3322229 [sender.py:send_request():406] send_request: defer
+2024-03-31 00:13:52,486 INFO    SenderThread:3322229 [sender.py:send_request_defer():610] handle sender defer: 0
+2024-03-31 00:13:52,486 INFO    SenderThread:3322229 [sender.py:transition_state():614] send defer: 1
+2024-03-31 00:13:52,486 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: defer
+2024-03-31 00:13:52,487 INFO    HandlerThread:3322229 [handler.py:handle_request_defer():172] handle defer: 1
+2024-03-31 00:13:52,487 DEBUG   SenderThread:3322229 [sender.py:send_request():406] send_request: defer
+2024-03-31 00:13:52,487 INFO    SenderThread:3322229 [sender.py:send_request_defer():610] handle sender defer: 1
+2024-03-31 00:13:52,487 INFO    SenderThread:3322229 [sender.py:transition_state():614] send defer: 2
+2024-03-31 00:13:52,487 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: defer
+2024-03-31 00:13:52,487 INFO    HandlerThread:3322229 [handler.py:handle_request_defer():172] handle defer: 2
+2024-03-31 00:13:52,487 INFO    HandlerThread:3322229 [system_monitor.py:finish():203] Stopping system monitor
+2024-03-31 00:13:52,487 DEBUG   SystemMonitor:3322229 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-03-31 00:13:52,487 DEBUG   SystemMonitor:3322229 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-03-31 00:13:52,488 DEBUG   SystemMonitor:3322229 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-03-31 00:13:52,489 INFO    HandlerThread:3322229 [interfaces.py:finish():202] Joined cpu monitor
+2024-03-31 00:13:52,489 INFO    HandlerThread:3322229 [interfaces.py:finish():202] Joined disk monitor
+2024-03-31 00:13:53,001 INFO    Thread-12 :3322229 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ubuntu/ejpark/Condenser/wandb/run-20240331_001258-jsm0ej5q/files/wandb-summary.json
+2024-03-31 00:13:54,001 INFO    Thread-12 :3322229 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ubuntu/ejpark/Condenser/wandb/run-20240331_001258-jsm0ej5q/files/output.log
+2024-03-31 00:13:55,002 INFO    Thread-12 :3322229 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ubuntu/ejpark/Condenser/wandb/run-20240331_001258-jsm0ej5q/files/output.log
+2024-03-31 00:14:01,689 INFO    HandlerThread:3322229 [interfaces.py:finish():202] Joined gpu monitor
+2024-03-31 00:14:01,689 INFO    HandlerThread:3322229 [interfaces.py:finish():202] Joined memory monitor
+2024-03-31 00:14:01,690 INFO    HandlerThread:3322229 [interfaces.py:finish():202] Joined network monitor
+2024-03-31 00:14:01,690 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-31 00:14:01,690 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: status_report
+2024-03-31 00:14:01,690 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:14:01,690 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: status_report
+2024-03-31 00:14:01,691 DEBUG   SenderThread:3322229 [sender.py:send_request():406] send_request: defer
+2024-03-31 00:14:01,691 INFO    SenderThread:3322229 [sender.py:send_request_defer():610] handle sender defer: 2
+2024-03-31 00:14:01,691 INFO    SenderThread:3322229 [sender.py:transition_state():614] send defer: 3
+2024-03-31 00:14:01,691 DEBUG   SenderThread:3322229 [sender.py:send():379] send: stats
+2024-03-31 00:14:01,691 DEBUG   SenderThread:3322229 [sender.py:send_request():406] send_request: poll_exit
+2024-03-31 00:14:01,692 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: defer
+2024-03-31 00:14:01,692 INFO    HandlerThread:3322229 [handler.py:handle_request_defer():172] handle defer: 3
+2024-03-31 00:14:01,692 DEBUG   SenderThread:3322229 [sender.py:send_request():406] send_request: defer
+2024-03-31 00:14:01,692 INFO    SenderThread:3322229 [sender.py:send_request_defer():610] handle sender defer: 3
+2024-03-31 00:14:01,692 INFO    SenderThread:3322229 [sender.py:transition_state():614] send defer: 4
+2024-03-31 00:14:01,692 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: defer
+2024-03-31 00:14:01,693 INFO    HandlerThread:3322229 [handler.py:handle_request_defer():172] handle defer: 4
+2024-03-31 00:14:01,693 DEBUG   SenderThread:3322229 [sender.py:send_request():406] send_request: defer
+2024-03-31 00:14:01,693 INFO    SenderThread:3322229 [sender.py:send_request_defer():610] handle sender defer: 4
+2024-03-31 00:14:01,693 INFO    SenderThread:3322229 [sender.py:transition_state():614] send defer: 5
+2024-03-31 00:14:01,693 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: defer
+2024-03-31 00:14:01,693 INFO    HandlerThread:3322229 [handler.py:handle_request_defer():172] handle defer: 5
+2024-03-31 00:14:01,693 DEBUG   SenderThread:3322229 [sender.py:send():379] send: summary
+2024-03-31 00:14:01,694 INFO    SenderThread:3322229 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-03-31 00:14:01,694 DEBUG   SenderThread:3322229 [sender.py:send_request():406] send_request: defer
+2024-03-31 00:14:01,694 INFO    SenderThread:3322229 [sender.py:send_request_defer():610] handle sender defer: 5
+2024-03-31 00:14:01,694 INFO    SenderThread:3322229 [sender.py:transition_state():614] send defer: 6
+2024-03-31 00:14:01,694 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: defer
+2024-03-31 00:14:01,694 INFO    HandlerThread:3322229 [handler.py:handle_request_defer():172] handle defer: 6
+2024-03-31 00:14:01,694 DEBUG   SenderThread:3322229 [sender.py:send_request():406] send_request: defer
+2024-03-31 00:14:01,694 INFO    SenderThread:3322229 [sender.py:send_request_defer():610] handle sender defer: 6
+2024-03-31 00:14:01,695 INFO    SenderThread:3322229 [sender.py:transition_state():614] send defer: 7
+2024-03-31 00:14:01,695 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: status_report
+2024-03-31 00:14:01,695 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: defer
+2024-03-31 00:14:01,695 INFO    HandlerThread:3322229 [handler.py:handle_request_defer():172] handle defer: 7
+2024-03-31 00:14:01,695 DEBUG   SenderThread:3322229 [sender.py:send_request():406] send_request: defer
+2024-03-31 00:14:01,695 INFO    SenderThread:3322229 [sender.py:send_request_defer():610] handle sender defer: 7
+2024-03-31 00:14:02,004 INFO    Thread-12 :3322229 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ubuntu/ejpark/Condenser/wandb/run-20240331_001258-jsm0ej5q/files/wandb-summary.json
+2024-03-31 00:14:02,487 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-31 00:14:04,380 INFO    SenderThread:3322229 [sender.py:transition_state():614] send defer: 8
+2024-03-31 00:14:04,380 DEBUG   SenderThread:3322229 [sender.py:send_request():406] send_request: poll_exit
+2024-03-31 00:14:04,380 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: defer
+2024-03-31 00:14:04,380 INFO    HandlerThread:3322229 [handler.py:handle_request_defer():172] handle defer: 8
+2024-03-31 00:14:04,380 DEBUG   SenderThread:3322229 [sender.py:send_request():406] send_request: defer
+2024-03-31 00:14:04,381 INFO    SenderThread:3322229 [sender.py:send_request_defer():610] handle sender defer: 8
+2024-03-31 00:14:04,381 INFO    SenderThread:3322229 [job_builder.py:build():318] Attempting to build job artifact
+2024-03-31 00:14:04,381 INFO    SenderThread:3322229 [job_builder.py:_get_source_type():455] is repo sourced job
+2024-03-31 00:14:04,402 INFO    SenderThread:3322229 [job_builder.py:build():431] adding wandb-job metadata file
+2024-03-31 00:14:04,406 INFO    SenderThread:3322229 [sender.py:transition_state():614] send defer: 9
+2024-03-31 00:14:04,406 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: defer
+2024-03-31 00:14:04,406 DEBUG   SenderThread:3322229 [sender.py:send():379] send: artifact
+2024-03-31 00:14:04,406 INFO    HandlerThread:3322229 [handler.py:handle_request_defer():172] handle defer: 9
+2024-03-31 00:14:04,488 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-31 00:14:05,004 INFO    Thread-12 :3322229 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ubuntu/ejpark/Condenser/wandb/run-20240331_001258-jsm0ej5q/files/output.log
+2024-03-31 00:14:05,259 ERROR   SenderThread:3322229 [internal_api.py:execute():373] 500 response executing GraphQL.
+2024-03-31 00:14:05,259 ERROR   SenderThread:3322229 [internal_api.py:execute():374] {"errors":[{"message":"An internal error occurred. Please contact support.","path":["createArtifactManifest"]}],"data":{"createArtifactManifest":null}}
+2024-03-31 00:14:06,635 ERROR   SenderThread:3322229 [internal_api.py:execute():373] 500 response executing GraphQL.
+2024-03-31 00:14:06,636 ERROR   SenderThread:3322229 [internal_api.py:execute():374] {"errors":[{"message":"An internal error occurred. Please contact support.","path":["createArtifactManifest"]}],"data":{"createArtifactManifest":null}}
+2024-03-31 00:14:08,930 ERROR   SenderThread:3322229 [internal_api.py:execute():373] 500 response executing GraphQL.
+2024-03-31 00:14:08,930 ERROR   SenderThread:3322229 [internal_api.py:execute():374] {"errors":[{"message":"An internal error occurred. Please contact support.","path":["createArtifactManifest"]}],"data":{"createArtifactManifest":null}}
+2024-03-31 00:14:08,930 INFO    SenderThread:3322229 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 369, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: https://api.wandb.ai/graphql
+2024-03-31 00:14:09,490 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:14:13,591 ERROR   SenderThread:3322229 [internal_api.py:execute():373] 500 response executing GraphQL.
+2024-03-31 00:14:13,591 ERROR   SenderThread:3322229 [internal_api.py:execute():374] {"errors":[{"message":"An internal error occurred. Please contact support.","path":["createArtifactManifest"]}],"data":{"createArtifactManifest":null}}
+2024-03-31 00:14:14,491 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:14:19,493 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:14:23,021 ERROR   SenderThread:3322229 [internal_api.py:execute():373] 500 response executing GraphQL.
+2024-03-31 00:14:23,022 ERROR   SenderThread:3322229 [internal_api.py:execute():374] {"errors":[{"message":"An internal error occurred. Please contact support.","path":["createArtifactManifest"]}],"data":{"createArtifactManifest":null}}
+2024-03-31 00:14:24,494 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:14:29,496 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:14:34,497 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:14:39,501 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:14:42,758 ERROR   SenderThread:3322229 [internal_api.py:execute():373] 500 response executing GraphQL.
+2024-03-31 00:14:42,758 ERROR   SenderThread:3322229 [internal_api.py:execute():374] {"errors":[{"message":"An internal error occurred. Please contact support.","path":["createArtifactManifest"]}],"data":{"createArtifactManifest":null}}
+2024-03-31 00:14:44,504 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:14:49,505 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:14:54,507 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:14:59,509 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:15:04,511 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:15:09,512 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:15:14,514 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:15:19,187 ERROR   SenderThread:3322229 [internal_api.py:execute():373] 500 response executing GraphQL.
+2024-03-31 00:15:19,187 ERROR   SenderThread:3322229 [internal_api.py:execute():374] {"errors":[{"message":"An internal error occurred. Please contact support.","path":["createArtifactManifest"]}],"data":{"createArtifactManifest":null}}
+2024-03-31 00:15:19,515 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:15:24,517 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:15:29,521 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:15:34,523 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:15:39,524 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:15:44,528 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:15:49,530 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:15:54,531 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:15:59,532 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:16:04,534 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:16:09,535 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:16:14,537 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:16:19,538 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:16:24,539 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:16:29,549 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:16:33,488 ERROR   SenderThread:3322229 [internal_api.py:execute():373] 500 response executing GraphQL.
+2024-03-31 00:16:33,489 ERROR   SenderThread:3322229 [internal_api.py:execute():374] {"errors":[{"message":"An internal error occurred. Please contact support.","path":["createArtifactManifest"]}],"data":{"createArtifactManifest":null}}
+2024-03-31 00:16:34,550 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:16:39,552 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:16:44,553 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:16:49,555 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:16:54,556 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:16:59,557 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:17:04,559 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:17:09,561 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:17:14,562 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:17:19,563 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:17:24,565 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:17:29,567 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:17:34,568 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:17:39,569 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:17:44,571 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:17:49,572 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:17:54,574 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:17:59,575 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:18:04,577 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:18:09,580 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:18:14,582 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:18:19,583 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:18:24,585 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:18:29,586 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:18:34,587 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:18:39,590 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:18:44,592 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:18:49,593 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:18:54,597 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:18:55,152 ERROR   SenderThread:3322229 [internal_api.py:execute():373] 500 response executing GraphQL.
+2024-03-31 00:18:55,152 ERROR   SenderThread:3322229 [internal_api.py:execute():374] {"errors":[{"message":"An internal error occurred. Please contact support.","path":["createArtifactManifest"]}],"data":{"createArtifactManifest":null}}
+2024-03-31 00:18:59,598 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:19:04,599 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:19:09,601 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:19:14,602 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:19:19,603 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:19:24,604 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:19:29,605 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:19:34,607 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:19:39,609 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:19:44,611 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:19:49,612 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:19:54,614 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:19:59,615 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:20:04,617 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:20:09,619 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:20:14,621 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:20:19,623 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:20:24,625 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:20:29,626 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:20:34,629 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:20:39,631 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:20:44,633 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:20:49,634 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:20:54,635 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:20:59,636 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:21:04,638 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:21:09,639 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:21:14,640 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:21:19,642 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:21:24,643 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:21:29,645 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:21:34,646 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:21:39,648 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:21:44,650 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:21:49,652 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:21:54,653 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:21:59,654 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:22:04,656 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:22:09,657 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:22:14,659 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:22:19,660 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:22:24,662 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:22:29,663 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:22:34,667 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:22:39,669 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:22:44,671 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:22:49,672 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:22:54,674 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:22:59,680 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:23:04,682 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:23:09,684 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:23:14,685 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:23:19,686 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:23:24,688 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:23:29,689 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:23:34,690 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:23:39,692 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:23:44,693 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:23:49,694 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:23:54,695 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:23:59,697 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:24:04,698 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:24:09,699 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:24:11,887 ERROR   SenderThread:3322229 [internal_api.py:execute():373] 500 response executing GraphQL.
+2024-03-31 00:24:11,888 ERROR   SenderThread:3322229 [internal_api.py:execute():374] {"errors":[{"message":"An internal error occurred. Please contact support.","path":["createArtifactManifest"]}],"data":{"createArtifactManifest":null}}
+2024-03-31 00:24:14,700 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:24:19,702 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:24:24,704 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:24:29,705 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:24:34,706 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:24:39,708 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:24:44,709 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:24:49,710 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:24:54,712 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:24:59,713 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:25:04,714 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:25:09,716 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:25:14,717 DEBUG   HandlerThread:3322229 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-31 00:25:24,020 WARNING StreamThr :3322229 [internal.py:is_dead():414] Internal process exiting, parent pid 3322146 disappeared
+2024-03-31 00:25:24,020 ERROR   StreamThr :3322229 [internal.py:wandb_internal():152] Internal process shutdown.
+2024-03-31 00:25:24,609 INFO    WriterThread:3322229 [datastore.py:close():296] close: /home/ubuntu/ejpark/Condenser/wandb/run-20240331_001258-jsm0ej5q/run-jsm0ej5q.wandb
+2024-03-31 00:25:24,718 INFO    HandlerThread:3322229 [handler.py:finish():866] shutting down handler
+2024-03-31 00:29:29,655 ERROR   SenderThread:3322229 [internal_api.py:execute():373] 500 response executing GraphQL.
+2024-03-31 00:29:29,655 ERROR   SenderThread:3322229 [internal_api.py:execute():374] {"errors":[{"message":"An internal error occurred. Please contact support.","path":["createArtifactManifest"]}],"data":{"createArtifactManifest":null}}
+2024-03-31 00:29:29,655 ERROR   SenderThread:3322229 [sender.py:send_artifact():1470] send_artifact: failed for artifact "job/job-https___github.com_3jp4rk_Condenser.git_run_co_pre_training.py": [Errno 5] Input/output error
+2024-03-31 00:29:29,655 INFO    SenderThread:3322229 [sender.py:finish():1546] shutting down sender
+2024-03-31 00:29:29,655 INFO    SenderThread:3322229 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-03-31 00:29:30,166 INFO    SenderThread:3322229 [dir_watcher.py:finish():388] scan: /home/ubuntu/ejpark/Condenser/wandb/run-20240331_001258-jsm0ej5q/files
+2024-03-31 00:29:30,166 INFO    SenderThread:3322229 [dir_watcher.py:finish():402] scan save: /home/ubuntu/ejpark/Condenser/wandb/run-20240331_001258-jsm0ej5q/files/config.yaml config.yaml
+2024-03-31 00:29:30,166 INFO    SenderThread:3322229 [dir_watcher.py:finish():402] scan save: /home/ubuntu/ejpark/Condenser/wandb/run-20240331_001258-jsm0ej5q/files/output.log output.log
+2024-03-31 00:29:30,167 INFO    SenderThread:3322229 [dir_watcher.py:finish():402] scan save: /home/ubuntu/ejpark/Condenser/wandb/run-20240331_001258-jsm0ej5q/files/requirements.txt requirements.txt
+2024-03-31 00:29:30,167 INFO    SenderThread:3322229 [dir_watcher.py:finish():402] scan save: /home/ubuntu/ejpark/Condenser/wandb/run-20240331_001258-jsm0ej5q/files/wandb-metadata.json wandb-metadata.json
+2024-03-31 00:29:30,167 INFO    SenderThread:3322229 [dir_watcher.py:finish():402] scan save: /home/ubuntu/ejpark/Condenser/wandb/run-20240331_001258-jsm0ej5q/files/wandb-summary.json wandb-summary.json
+2024-03-31 00:29:30,167 INFO    SenderThread:3322229 [file_pusher.py:finish():172] shutting down file pusher
+2024-03-31 00:29:30,167 INFO    SenderThread:3322229 [file_pusher.py:join():178] waiting for file pusher
+2024-03-31 00:29:30,668 INFO    SenderThread:3322229 [file_stream.py:finish():614] file stream finish called
+2024-03-31 00:29:30,870 INFO    SenderThread:3322229 [file_stream.py:finish():618] file stream finish is done

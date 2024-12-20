@@ -1,0 +1,36 @@
+
+[34m[1mwandb[39m[22m: [33mWARNING[39m Calling wandb.login() after wandb.init() has no effect.
+03/28/2024 18:18:13 - WARNING - __main__ -   Process rank: 1, device: cuda:1, n_gpu: 1distributed training: True, 16-bits training: False
+-------------------------------------------
+loading json . . .
+en_index.json load complete! 351.94806361198425 seconds took.
+ko_index.json load complete! 529.8366956710815 seconds took.
+/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/accelerate/accelerator.py:432: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead:
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+Traceback (most recent call last):
+  File "/home/ubuntu/ejpark/Condenser/run_co_pre_training.py", line 218, in <module>
+    main()
+  File "/home/ubuntu/ejpark/Condenser/run_co_pre_training.py", line 208, in main
+    trainer.train()
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 1780, in train
+    return inner_training_loop(
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 2085, in _inner_training_loop
+    for step, inputs in enumerate(epoch_iterator):
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/accelerate/data_loader.py", line 452, in __iter__
+    current_batch = next(dataloader_iter)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 674, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/transformers/trainer_utils.py", line 787, in __call__
+    return self.data_collator(features)
+  File "/home/ubuntu/ejpark/Condenser/data.py", line 173, in __call__
+    return super(CoCondenserCollator, self).__call__(examples)
+  File "/home/ubuntu/ejpark/Condenser/data.py", line 131, in __call__
+    e_trunc = self._truncate(e['text'])
+  File "/home/ubuntu/ejpark/Condenser/data.py", line 103, in _truncate
+    tgt_len = self.max_seq_length - self.tokenizer.num_special_tokens_to_add(False)
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'int'

@@ -1,0 +1,33 @@
+
+wandb: WARNING Calling wandb.login() after wandb.init() has no effect.
+03/30/2024 19:59:43 - WARNING - __main__ -   Process rank: 1, device: cuda:1, n_gpu: 1distributed training: True, 16-bits training: False
+-------------------------------------------
+loading json . . .
+/home/ubuntu/ejpark/new_index_diet__.json load complete! 482.07337951660156 seconds took.
+/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/accelerate/accelerator.py:432: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead:
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/transformers/modeling_utils.py:977: FutureWarning: The `device` argument is deprecated and will be removed in v5 of Transformers.
+  warnings.warn(
+loss: nan, co: nan
+loss: nan, co: nan
+loss: nan, co: nan
+loss: nan, co: nan
+loss: nan, co: nan
+loss: nan, co: nan
+loss: nan, co: nan
+loss: nan, co: nan
+loss: nan, co: nan
+loss: nan, co: nan
+loss: nan, co: nan
+loss: nan, co: nan
+loss: nan, co: nan
+loss: nan, co: nan
+loss: nan, co: nan
+loss: nan, co: nan
+loss: nan, co: nan
+loss: nan, co: nan
+loss: nan, co: nan
+loss: nan, co: nan
+loss: nan, co: nan
+loss: nan, co: nan

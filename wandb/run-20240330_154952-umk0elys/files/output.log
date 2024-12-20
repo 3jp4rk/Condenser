@@ -1,0 +1,45 @@
+
+[34m[1mwandb[39m[22m: [33mWARNING[39m Calling wandb.login() after wandb.init() has no effect.
+03/30/2024 15:50:49 - WARNING - __main__ -   Process rank: 1, device: cuda:1, n_gpu: 1distributed training: True, 16-bits training: False
+-------------------------------------------
+loading json . . .
+/home/ubuntu/ejpark/new_index_diet__.json load complete! 477.6482198238373 seconds took.
+/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/accelerate/accelerator.py:432: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead:
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+Traceback (most recent call last):
+  File "/home/ubuntu/ejpark/Condenser/run_co_pre_training.py", line 218, in <module>
+    main()
+  File "/home/ubuntu/ejpark/Condenser/run_co_pre_training.py", line 208, in main
+    trainer.train()
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 1780, in train
+    return inner_training_loop(
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 2085, in _inner_training_loop
+    for step, inputs in enumerate(epoch_iterator):
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/accelerate/data_loader.py", line 452, in __iter__
+    current_batch = next(dataloader_iter)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1345, in _next_data
+    return self._process_data(data)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/_utils.py", line 694, in reraise
+    raise exception
+TypeError: Caught TypeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/ubuntu/ejpark/Condenser/../marco_dataset.py", line 289, in __getitem__
+    return self.get_data(self.train2full(idx))
+  File "/home/ubuntu/ejpark/Condenser/../marco_dataset.py", line 331, in get_data
+    selected = get_doc_passage(self.data_idx, ds, idx)
+  File "/home/ubuntu/ejpark/Condenser/../marco_dataset.py", line 201, in get_doc_passage
+    en_passage = random.sample(doc_items[en_idx], 1)[0]["en"]
+  File "/usr/lib/python3.9/random.py", line 433, in sample
+    raise TypeError("Population must be a sequence.  For dicts or sets, use sorted(d).")
+TypeError: Population must be a sequence.  For dicts or sets, use sorted(d).

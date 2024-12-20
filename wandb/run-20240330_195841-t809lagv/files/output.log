@@ -1,0 +1,250 @@
+
+wandb: WARNING Calling wandb.login() after wandb.init() has no effect.
+03/30/2024 19:59:22 - WARNING - __main__ -   Process rank: 0, device: cuda:0, n_gpu: 1distributed training: True, 16-bits training: False
+03/30/2024 19:59:22 - INFO - __main__ -   Training/evaluation parameters CoCondenserPreTrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+cache_chunk_size=-1,
+data_seed=None,
+dataloader_drop_last=True,
+dataloader_num_workers=4,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=5000.0,
+evaluation_strategy=no,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0001,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=co_condenser_pretrain/runs/Mar30_19-58-47_gpu-1,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=1.0,
+logging_strategy=steps,
+lr_scheduler_kwargs={},
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_cuda=False,
+num_train_epochs=8.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=co_condenser_pretrain,
+overwrite_output_dir=True,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=16,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=False,
+report_to=['wandb'],
+resume_from_checkpoint=None,
+run_name=co_condenser_pretrain,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=20000,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+split_batches=None,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.1,
+warmup_steps=0,
+weight_decay=0.01,
+)
+[INFO|configuration_utils.py:724] 2024-03-30 19:59:22,967 >> loading configuration file /home/ubuntu/ejpark/checkpoint-260000/config.json
+[INFO|configuration_utils.py:789] 2024-03-30 19:59:22,969 >> Model config BertConfig {
+  "_name_or_path": "/home/ubuntu/ejpark/checkpoint-260000/",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "torch_dtype": "float32",
+  "transformers_version": "4.39.1",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+[INFO|tokenization_utils_base.py:2082] 2024-03-30 19:59:22,970 >> loading file vocab.txt
+[INFO|tokenization_utils_base.py:2082] 2024-03-30 19:59:22,970 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2082] 2024-03-30 19:59:22,970 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2082] 2024-03-30 19:59:22,970 >> loading file tokenizer_config.json
+[INFO|tokenization_utils_base.py:2082] 2024-03-30 19:59:22,970 >> loading file tokenizer.json
+[INFO|modeling_utils.py:3280] 2024-03-30 19:59:23,049 >> loading weights file /home/ubuntu/ejpark/checkpoint-260000/model.safetensors
+[INFO|configuration_utils.py:928] 2024-03-30 19:59:23,059 >> Generate config GenerationConfig {
+  "pad_token_id": 0
+}
+[INFO|modeling_utils.py:4024] 2024-03-30 19:59:23,698 >> All model checkpoint weights were used when initializing BertForMaskedLM.
+[INFO|modeling_utils.py:4032] 2024-03-30 19:59:23,698 >> All the weights of BertForMaskedLM were initialized from the model checkpoint at /home/ubuntu/ejpark/checkpoint-260000/.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use BertForMaskedLM for predictions without further training.
+[INFO|configuration_utils.py:881] 2024-03-30 19:59:23,701 >> loading configuration file /home/ubuntu/ejpark/checkpoint-260000/generation_config.json
+[INFO|configuration_utils.py:928] 2024-03-30 19:59:23,701 >> Generate config GenerationConfig {
+  "pad_token_id": 0
+}
+-------------------------------------------
+loading json . . .
+03/30/2024 19:59:23 - INFO - modeling -   loading extra weights from local files
+/home/ubuntu/ejpark/new_index_diet__.json load complete! 482.6542203426361 seconds took.
+03/30/2024 20:07:26 - INFO - trainer -   Initializing Gradient Cache Trainer
+/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/accelerate/accelerator.py:432: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead:
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+[INFO|trainer.py:1969] 2024-03-30 20:09:28,470 >> ***** Running training *****
+[INFO|trainer.py:1970] 2024-03-30 20:09:28,470 >>   Num examples = 7,204
+[INFO|trainer.py:1971] 2024-03-30 20:09:28,470 >>   Num Epochs = 8
+[INFO|trainer.py:1972] 2024-03-30 20:09:28,471 >>   Instantaneous batch size per device = 16
+[INFO|trainer.py:1975] 2024-03-30 20:09:28,471 >>   Total train batch size (w. parallel, distributed & accumulation) = 32
+[INFO|trainer.py:1976] 2024-03-30 20:09:28,471 >>   Gradient Accumulation steps = 1
+[INFO|trainer.py:1977] 2024-03-30 20:09:28,471 >>   Total optimization steps = 1,800
+[INFO|trainer.py:1978] 2024-03-30 20:09:28,472 >>   Number of trainable parameters = 147,735,134
+[INFO|integration_utils.py:723] 2024-03-30 20:09:28,473 >> Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+  0%|          | 0/1800 [00:00<?, ?it/s]/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/transformers/modeling_utils.py:977: FutureWarning: The `device` argument is deprecated and will be removed in v5 of Transformers.
+  warnings.warn(
+loss: nan, co: nan
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 5.555555555555556e-07, 'epoch': 0.0}
+loss: nan, co: nan
+  0%|          | 1/1800 [06:08<184:21:26, 368.92s/it]
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.1111111111111112e-06, 'epoch': 0.01}
+loss: nan, co: nan
+
+  0%|          | 3/1800 [06:12<41:47:24, 83.72s/it]
+loss: nan, co: nan
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 2.2222222222222225e-06, 'epoch': 0.02}
+
+  0%|          | 5/1800 [08:40<34:56:32, 70.08s/it]
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 2.777777777777778e-06, 'epoch': 0.02}
+loss: nan, co: nan
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 3.3333333333333333e-06, 'epoch': 0.03}
+
+  0%|          | 6/1800 [08:42<23:16:29, 46.71s/it]
+
+
+  0%|          | 8/1800 [12:44<49:05:22, 98.62s/it]
+
+  0%|          | 9/1800 [12:46<33:55:55, 68.20s/it]
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 4.444444444444445e-06, 'epoch': 0.04}
+loss: nan, co: nan
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 5e-06, 'epoch': 0.04}
+
+  1%|          | 11/1800 [12:48<16:36:15, 33.41s/it]
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 5.555555555555556e-06, 'epoch': 0.04}
+loss: nan, co: nan
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 6.111111111111111e-06, 'epoch': 0.05}
+loss: nan, co: nan
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 6.666666666666667e-06, 'epoch': 0.05}
+
+  1%|          | 12/1800 [17:28<53:47:57, 108.32s/it]
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 7.222222222222222e-06, 'epoch': 0.06}
+
+  1%|          | 14/1800 [17:31<26:29:03, 53.38s/it]
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 7.777777777777777e-06, 'epoch': 0.06}
+loss: nan, co: nan
+
+  1%|          | 15/1800 [17:32<18:41:23, 37.69s/it]
+
+  1%|          | 17/1800 [20:49<29:40:04, 59.90s/it]
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 8.88888888888889e-06, 'epoch': 0.07}
+loss: nan, co: nan
+
+  1%|          | 18/1800 [20:50<20:56:22, 42.30s/it]
+loss: nan, co: nan
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1e-05, 'epoch': 0.08}
+
+  1%|          | 19/1800 [20:51<14:50:25, 30.00s/it]
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.0555555555555555e-05, 'epoch': 0.08}
+
+  1%|          | 21/1800 [26:19<41:22:20, 83.72s/it]
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.1111111111111112e-05, 'epoch': 0.09}
+loss: nan, co: nan
+
+  1%|          | 22/1800 [26:21<29:08:11, 58.99s/it]
+loss: nan, co: nan
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.2222222222222222e-05, 'epoch': 0.1}
+
+  1%|▏         | 23/1800 [26:22<20:34:44, 41.69s/it]

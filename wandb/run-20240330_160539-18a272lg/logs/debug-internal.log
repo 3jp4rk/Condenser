@@ -1,0 +1,369 @@
+2024-03-30 16:05:39,377 INFO    StreamThr :3140027 [internal.py:wandb_internal():86] W&B internal server running at pid: 3140027, started at: 2024-03-30 16:05:39.376729
+2024-03-30 16:05:39,381 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status
+2024-03-30 16:05:39,382 INFO    WriterThread:3140027 [datastore.py:open_for_write():87] open: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/run-18a272lg.wandb
+2024-03-30 16:05:39,383 DEBUG   SenderThread:3140027 [sender.py:send():379] send: header
+2024-03-30 16:05:39,410 DEBUG   SenderThread:3140027 [sender.py:send():379] send: run
+2024-03-30 16:05:39,966 INFO    SenderThread:3140027 [dir_watcher.py:__init__():211] watching files in: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files
+2024-03-30 16:05:39,966 INFO    SenderThread:3140027 [sender.py:_start_run_threads():1124] run started: 18a272lg with start time 1711782339.376786
+2024-03-30 16:05:39,976 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: check_version
+2024-03-30 16:05:39,976 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: check_version
+2024-03-30 16:05:40,089 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: run_start
+2024-03-30 16:05:43,157 DEBUG   HandlerThread:3140027 [system_info.py:__init__():26] System info init
+2024-03-30 16:05:43,157 DEBUG   HandlerThread:3140027 [system_info.py:__init__():41] System info init done
+2024-03-30 16:05:43,157 INFO    HandlerThread:3140027 [system_monitor.py:start():194] Starting system monitor
+2024-03-30 16:05:43,158 INFO    SystemMonitor:3140027 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-03-30 16:05:43,158 INFO    HandlerThread:3140027 [system_monitor.py:probe():214] Collecting system info
+2024-03-30 16:05:43,158 INFO    SystemMonitor:3140027 [interfaces.py:start():190] Started cpu monitoring
+2024-03-30 16:05:43,159 INFO    SystemMonitor:3140027 [interfaces.py:start():190] Started disk monitoring
+2024-03-30 16:05:43,162 INFO    SystemMonitor:3140027 [interfaces.py:start():190] Started gpu monitoring
+2024-03-30 16:05:43,162 INFO    SystemMonitor:3140027 [interfaces.py:start():190] Started memory monitoring
+2024-03-30 16:05:43,163 INFO    SystemMonitor:3140027 [interfaces.py:start():190] Started network monitoring
+2024-03-30 16:05:47,505 DEBUG   HandlerThread:3140027 [system_info.py:probe():150] Probing system
+2024-03-30 16:05:47,506 DEBUG   HandlerThread:3140027 [system_info.py:_probe_git():135] Probing git
+2024-03-30 16:05:47,528 DEBUG   HandlerThread:3140027 [system_info.py:_probe_git():143] Probing git done
+2024-03-30 16:05:47,528 DEBUG   HandlerThread:3140027 [system_info.py:probe():198] Probing system done
+2024-03-30 16:05:47,528 DEBUG   HandlerThread:3140027 [system_monitor.py:probe():223] {'os': 'Linux-5.15.0-86-generic-x86_64-with-glibc2.35', 'python': '3.9.18', 'heartbeatAt': '2024-03-30T07:05:47.505941', 'startedAt': '2024-03-30T07:05:39.371879', 'docker': None, 'cuda': None, 'args': ('--output_dir', 'co_condenser_pretrain', '--model_name_or_path', '/home/ubuntu/ejpark/checkpoint-260000/', '--do_train', '--report_to', 'wandb', '--logging_steps', '1', '--remove_unused_columns', 'false', '--save_steps', '20000', '--eval_steps', '5000', '--model_type', 'bert', '--per_device_train_batch_size', '16', '--gradient_accumulation_steps', '1', '--warmup_ratio', '0.1', '--learning_rate', '1e-4', '--num_train_epochs', '8', '--dataloader_drop_last', '--overwrite_output_dir', '--dataloader_num_workers', '4', '--n_head_layers', '2', '--skip_from', '6', '--max_seq_length', '512', '--weight_decay', '0.01', '--late_mlm'), 'state': 'running', 'program': '/home/ubuntu/ejpark/Condenser/run_co_pre_training.py', 'codePathLocal': 'run_co_pre_training.py', 'codePath': 'run_co_pre_training.py', 'git': {'remote': 'https://github.com/3jp4rk/Condenser.git', 'commit': 'a3a479898881d3cabac5b19dcb0e3ba55cebd278'}, 'email': 'mari970@naver.com', 'root': '/home/ubuntu/ejpark/Condenser', 'host': 'gpu-1', 'username': 'ubuntu', 'executable': '/home/ubuntu/ejpark/con_venv/bin/python3.9', 'cpu_count': 48, 'cpu_count_logical': 48, 'cpu_freq': {'current': 2794.75, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}], 'disk': {'/': {'total': 193.6498260498047, 'used': 95.220947265625}}, 'gpu': 'NVIDIA A100-SXM4-80GB', 'gpu_count': 4, 'gpu_devices': [{'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}], 'memory': {'total': 885.4374961853027}}
+2024-03-30 16:05:47,528 INFO    HandlerThread:3140027 [system_monitor.py:probe():224] Finished collecting system info
+2024-03-30 16:05:47,528 INFO    HandlerThread:3140027 [system_monitor.py:probe():227] Publishing system info
+2024-03-30 16:05:47,529 INFO    HandlerThread:3140027 [system_monitor.py:probe():229] Finished publishing system info
+2024-03-30 16:05:47,531 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:05:47,531 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-30 16:05:47,532 DEBUG   SenderThread:3140027 [sender.py:send():379] send: files
+2024-03-30 16:05:47,532 INFO    SenderThread:3140027 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2024-03-30 16:05:47,580 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: python_packages
+2024-03-30 16:05:47,580 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: python_packages
+2024-03-30 16:05:47,581 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-30 16:05:47,581 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: stop_status
+2024-03-30 16:05:47,584 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-30 16:05:47,965 DEBUG   SenderThread:3140027 [sender.py:send():379] send: telemetry
+2024-03-30 16:05:47,969 INFO    Thread-12 :3140027 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/requirements.txt
+2024-03-30 16:05:47,969 INFO    Thread-12 :3140027 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/wandb-metadata.json
+2024-03-30 16:05:47,969 INFO    Thread-12 :3140027 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/output.log
+2024-03-30 16:05:48,301 INFO    wandb-upload_0:3140027 [upload_job.py:push():131] Uploaded file /tmp/tmphk5zkva_wandb/gvztqrcq-wandb-metadata.json
+2024-03-30 16:05:50,967 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:05:50,969 INFO    Thread-12 :3140027 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/output.log
+2024-03-30 16:05:55,967 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:06:00,968 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:06:05,968 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:06:10,060 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-30 16:06:10,104 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-30 16:06:10,104 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-30 16:06:10,973 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:06:11,975 INFO    Thread-12 :3140027 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/config.yaml
+2024-03-30 16:06:15,062 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-30 16:06:16,200 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:06:21,207 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:06:26,201 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:06:31,202 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:06:36,202 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:06:41,203 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:06:41,417 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-30 16:06:41,418 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-30 16:06:41,432 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-30 16:06:42,989 INFO    Thread-12 :3140027 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/output.log
+2024-03-30 16:06:43,164 DEBUG   SystemMonitor:3140027 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-03-30 16:06:43,165 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:06:44,989 INFO    Thread-12 :3140027 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/output.log
+2024-03-30 16:06:47,167 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:06:52,168 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:06:57,168 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:07:02,169 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:07:07,170 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:07:12,172 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:07:13,167 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:07:18,168 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:07:23,169 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:07:28,169 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:07:33,170 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:07:38,171 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:07:43,168 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:07:44,169 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:07:49,172 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:07:54,173 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:07:59,173 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:08:04,174 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:08:09,175 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:08:13,169 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:08:15,170 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:08:20,171 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:08:25,171 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:08:30,172 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:08:35,173 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:08:40,174 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:08:43,171 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:08:46,172 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:08:51,173 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:08:56,173 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:09:01,176 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:09:06,177 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:09:11,177 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:09:13,172 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:09:17,173 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:09:22,173 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:09:27,174 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:09:32,175 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:09:37,175 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:09:42,177 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:09:43,174 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:09:48,175 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:09:53,176 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:09:58,177 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:10:03,178 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:10:08,179 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:10:13,175 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:10:14,176 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:10:19,177 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:10:24,178 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:10:29,178 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:10:34,179 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:10:39,180 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:10:43,176 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:10:45,177 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:10:50,178 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:10:55,178 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:11:00,179 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:11:05,180 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:11:10,184 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:11:13,177 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:11:16,178 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:11:21,179 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:11:26,181 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:11:31,181 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:11:36,182 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:11:41,182 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:11:43,179 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:11:47,180 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:11:52,181 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:11:57,182 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:12:02,184 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:12:07,184 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:12:12,185 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:12:13,180 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:12:18,181 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:12:23,181 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:12:28,184 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:12:33,185 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:12:38,186 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:12:43,181 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:12:44,182 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:12:49,183 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:12:54,184 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:12:59,184 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:13:04,185 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:13:09,186 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:13:13,182 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:13:15,183 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:13:20,184 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:13:25,184 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:13:30,186 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:13:35,186 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:13:40,187 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:13:43,183 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:13:46,184 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:13:51,184 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:13:56,185 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:14:01,185 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:14:06,186 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:14:11,187 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:14:13,186 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:14:16,187 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:14:21,188 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:14:26,188 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:14:31,189 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:14:36,189 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:14:40,405 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-30 16:14:40,405 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-30 16:14:41,453 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:14:42,140 INFO    Thread-12 :3140027 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/output.log
+2024-03-30 16:14:43,141 INFO    Thread-12 :3140027 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/output.log
+2024-03-30 16:14:43,185 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:14:45,406 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-30 16:14:47,186 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:14:52,187 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:14:57,188 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:15:02,189 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:15:07,189 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:15:12,190 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:15:13,188 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:15:18,189 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:15:23,190 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:15:28,190 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:15:33,191 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:15:38,191 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:15:43,188 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:15:44,188 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:15:49,189 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:15:54,189 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:15:57,725 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-30 16:15:57,725 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-30 16:15:57,726 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-30 16:15:59,190 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:16:03,726 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-30 16:16:04,191 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:16:08,737 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-30 16:16:09,191 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:16:12,725 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-30 16:16:13,189 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:16:15,189 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:16:17,738 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-30 16:16:20,190 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:16:22,761 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-30 16:16:25,191 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:16:28,173 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-30 16:16:30,191 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:16:34,173 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-30 16:16:35,192 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:16:39,178 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-30 16:16:40,193 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:16:43,172 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-30 16:16:43,190 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:16:46,191 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:16:48,179 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-30 16:16:51,192 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:16:53,180 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-30 16:16:55,083 DEBUG   SenderThread:3140027 [sender.py:send():379] send: exit
+2024-03-30 16:16:55,083 INFO    SenderThread:3140027 [sender.py:send_exit():586] handling exit code: 1
+2024-03-30 16:16:55,083 INFO    SenderThread:3140027 [sender.py:send_exit():588] handling runtime: 674
+2024-03-30 16:16:55,083 INFO    SenderThread:3140027 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-03-30 16:16:55,084 INFO    SenderThread:3140027 [sender.py:send_exit():594] send defer
+2024-03-30 16:16:55,084 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: defer
+2024-03-30 16:16:55,084 INFO    HandlerThread:3140027 [handler.py:handle_request_defer():172] handle defer: 0
+2024-03-30 16:16:55,084 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: defer
+2024-03-30 16:16:55,084 INFO    SenderThread:3140027 [sender.py:send_request_defer():610] handle sender defer: 0
+2024-03-30 16:16:55,084 INFO    SenderThread:3140027 [sender.py:transition_state():614] send defer: 1
+2024-03-30 16:16:55,084 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: defer
+2024-03-30 16:16:55,084 INFO    HandlerThread:3140027 [handler.py:handle_request_defer():172] handle defer: 1
+2024-03-30 16:16:55,085 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: defer
+2024-03-30 16:16:55,085 INFO    SenderThread:3140027 [sender.py:send_request_defer():610] handle sender defer: 1
+2024-03-30 16:16:55,085 INFO    SenderThread:3140027 [sender.py:transition_state():614] send defer: 2
+2024-03-30 16:16:55,085 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: defer
+2024-03-30 16:16:55,085 INFO    HandlerThread:3140027 [handler.py:handle_request_defer():172] handle defer: 2
+2024-03-30 16:16:55,085 INFO    HandlerThread:3140027 [system_monitor.py:finish():203] Stopping system monitor
+2024-03-30 16:16:55,085 DEBUG   SystemMonitor:3140027 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-03-30 16:16:55,085 DEBUG   SystemMonitor:3140027 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-03-30 16:16:55,086 INFO    HandlerThread:3140027 [interfaces.py:finish():202] Joined cpu monitor
+2024-03-30 16:16:55,086 INFO    HandlerThread:3140027 [interfaces.py:finish():202] Joined disk monitor
+2024-03-30 16:16:55,188 INFO    Thread-12 :3140027 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/wandb-summary.json
+2024-03-30 16:16:57,188 INFO    Thread-12 :3140027 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/output.log
+2024-03-30 16:17:03,754 INFO    HandlerThread:3140027 [interfaces.py:finish():202] Joined gpu monitor
+2024-03-30 16:17:03,755 INFO    HandlerThread:3140027 [interfaces.py:finish():202] Joined memory monitor
+2024-03-30 16:17:03,755 INFO    HandlerThread:3140027 [interfaces.py:finish():202] Joined network monitor
+2024-03-30 16:17:03,755 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-30 16:17:03,755 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:17:03,755 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-30 16:17:03,755 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:17:03,756 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: defer
+2024-03-30 16:17:03,756 INFO    SenderThread:3140027 [sender.py:send_request_defer():610] handle sender defer: 2
+2024-03-30 16:17:03,756 INFO    SenderThread:3140027 [sender.py:transition_state():614] send defer: 3
+2024-03-30 16:17:03,756 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: defer
+2024-03-30 16:17:03,756 INFO    HandlerThread:3140027 [handler.py:handle_request_defer():172] handle defer: 3
+2024-03-30 16:17:03,756 DEBUG   SenderThread:3140027 [sender.py:send():379] send: stats
+2024-03-30 16:17:03,757 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: poll_exit
+2024-03-30 16:17:03,757 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: defer
+2024-03-30 16:17:03,757 INFO    SenderThread:3140027 [sender.py:send_request_defer():610] handle sender defer: 3
+2024-03-30 16:17:03,757 INFO    SenderThread:3140027 [sender.py:transition_state():614] send defer: 4
+2024-03-30 16:17:03,757 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: defer
+2024-03-30 16:17:03,757 INFO    HandlerThread:3140027 [handler.py:handle_request_defer():172] handle defer: 4
+2024-03-30 16:17:03,758 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: defer
+2024-03-30 16:17:03,758 INFO    SenderThread:3140027 [sender.py:send_request_defer():610] handle sender defer: 4
+2024-03-30 16:17:03,758 INFO    SenderThread:3140027 [sender.py:transition_state():614] send defer: 5
+2024-03-30 16:17:03,758 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: defer
+2024-03-30 16:17:03,758 INFO    HandlerThread:3140027 [handler.py:handle_request_defer():172] handle defer: 5
+2024-03-30 16:17:03,758 DEBUG   SenderThread:3140027 [sender.py:send():379] send: summary
+2024-03-30 16:17:03,758 INFO    SenderThread:3140027 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-03-30 16:17:03,759 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: defer
+2024-03-30 16:17:03,759 INFO    SenderThread:3140027 [sender.py:send_request_defer():610] handle sender defer: 5
+2024-03-30 16:17:03,759 INFO    SenderThread:3140027 [sender.py:transition_state():614] send defer: 6
+2024-03-30 16:17:03,759 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: defer
+2024-03-30 16:17:03,759 INFO    HandlerThread:3140027 [handler.py:handle_request_defer():172] handle defer: 6
+2024-03-30 16:17:03,759 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: defer
+2024-03-30 16:17:03,759 INFO    SenderThread:3140027 [sender.py:send_request_defer():610] handle sender defer: 6
+2024-03-30 16:17:03,759 INFO    SenderThread:3140027 [sender.py:transition_state():614] send defer: 7
+2024-03-30 16:17:03,759 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: status_report
+2024-03-30 16:17:03,759 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: defer
+2024-03-30 16:17:03,759 INFO    HandlerThread:3140027 [handler.py:handle_request_defer():172] handle defer: 7
+2024-03-30 16:17:03,760 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: defer
+2024-03-30 16:17:03,760 INFO    SenderThread:3140027 [sender.py:send_request_defer():610] handle sender defer: 7
+2024-03-30 16:17:04,085 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-30 16:17:04,191 INFO    Thread-12 :3140027 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/wandb-summary.json
+2024-03-30 16:17:05,328 INFO    SenderThread:3140027 [sender.py:transition_state():614] send defer: 8
+2024-03-30 16:17:05,328 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: poll_exit
+2024-03-30 16:17:05,328 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: defer
+2024-03-30 16:17:05,328 INFO    HandlerThread:3140027 [handler.py:handle_request_defer():172] handle defer: 8
+2024-03-30 16:17:05,329 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: defer
+2024-03-30 16:17:05,329 INFO    SenderThread:3140027 [sender.py:send_request_defer():610] handle sender defer: 8
+2024-03-30 16:17:05,329 INFO    SenderThread:3140027 [job_builder.py:build():318] Attempting to build job artifact
+2024-03-30 16:17:05,329 INFO    SenderThread:3140027 [job_builder.py:_get_source_type():455] is repo sourced job
+2024-03-30 16:17:05,355 INFO    SenderThread:3140027 [job_builder.py:build():431] adding wandb-job metadata file
+2024-03-30 16:17:05,358 INFO    SenderThread:3140027 [sender.py:transition_state():614] send defer: 9
+2024-03-30 16:17:05,359 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: defer
+2024-03-30 16:17:05,359 INFO    HandlerThread:3140027 [handler.py:handle_request_defer():172] handle defer: 9
+2024-03-30 16:17:05,359 DEBUG   SenderThread:3140027 [sender.py:send():379] send: artifact
+2024-03-30 16:17:06,089 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-30 16:17:06,192 INFO    Thread-12 :3140027 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/output.log
+2024-03-30 16:17:06,518 INFO    SenderThread:3140027 [sender.py:send_artifact():1468] sent artifact job-https___github.com_3jp4rk_Condenser.git_run_co_pre_training.py - {'id': 'QXJ0aWZhY3Q6Nzc0MjIwNjAw', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE1MzQ5MjEyMg==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6Nzc2NzMzNzAw', 'versionIndex': 4}}}
+2024-03-30 16:17:06,518 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: defer
+2024-03-30 16:17:06,518 INFO    SenderThread:3140027 [sender.py:send_request_defer():610] handle sender defer: 9
+2024-03-30 16:17:06,518 INFO    SenderThread:3140027 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-03-30 16:17:07,193 INFO    SenderThread:3140027 [dir_watcher.py:finish():388] scan: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files
+2024-03-30 16:17:07,193 INFO    SenderThread:3140027 [dir_watcher.py:finish():402] scan save: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/config.yaml config.yaml
+2024-03-30 16:17:07,194 INFO    SenderThread:3140027 [dir_watcher.py:finish():402] scan save: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/output.log output.log
+2024-03-30 16:17:07,194 INFO    SenderThread:3140027 [dir_watcher.py:finish():402] scan save: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/requirements.txt requirements.txt
+2024-03-30 16:17:07,194 INFO    SenderThread:3140027 [dir_watcher.py:finish():402] scan save: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/wandb-metadata.json wandb-metadata.json
+2024-03-30 16:17:07,194 INFO    SenderThread:3140027 [dir_watcher.py:finish():402] scan save: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/wandb-summary.json wandb-summary.json
+2024-03-30 16:17:07,197 INFO    SenderThread:3140027 [sender.py:transition_state():614] send defer: 10
+2024-03-30 16:17:07,197 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: poll_exit
+2024-03-30 16:17:07,202 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: defer
+2024-03-30 16:17:07,202 INFO    HandlerThread:3140027 [handler.py:handle_request_defer():172] handle defer: 10
+2024-03-30 16:17:07,206 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: defer
+2024-03-30 16:17:07,206 INFO    SenderThread:3140027 [sender.py:send_request_defer():610] handle sender defer: 10
+2024-03-30 16:17:07,206 INFO    SenderThread:3140027 [file_pusher.py:finish():172] shutting down file pusher
+2024-03-30 16:17:07,799 INFO    wandb-upload_0:3140027 [upload_job.py:push():131] Uploaded file /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/config.yaml
+2024-03-30 16:17:07,994 INFO    wandb-upload_2:3140027 [upload_job.py:push():131] Uploaded file /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/requirements.txt
+2024-03-30 16:17:08,014 INFO    wandb-upload_3:3140027 [upload_job.py:push():131] Uploaded file /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/wandb-summary.json
+2024-03-30 16:17:08,033 INFO    wandb-upload_1:3140027 [upload_job.py:push():131] Uploaded file /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/files/output.log
+2024-03-30 16:17:08,091 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-30 16:17:08,092 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: poll_exit
+2024-03-30 16:17:08,233 INFO    Thread-11 :3140027 [sender.py:transition_state():614] send defer: 11
+2024-03-30 16:17:08,234 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: defer
+2024-03-30 16:17:08,234 INFO    HandlerThread:3140027 [handler.py:handle_request_defer():172] handle defer: 11
+2024-03-30 16:17:08,234 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: defer
+2024-03-30 16:17:08,235 INFO    SenderThread:3140027 [sender.py:send_request_defer():610] handle sender defer: 11
+2024-03-30 16:17:08,235 INFO    SenderThread:3140027 [file_pusher.py:join():178] waiting for file pusher
+2024-03-30 16:17:08,235 INFO    SenderThread:3140027 [sender.py:transition_state():614] send defer: 12
+2024-03-30 16:17:08,235 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: defer
+2024-03-30 16:17:08,235 INFO    HandlerThread:3140027 [handler.py:handle_request_defer():172] handle defer: 12
+2024-03-30 16:17:08,235 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: defer
+2024-03-30 16:17:08,235 INFO    SenderThread:3140027 [sender.py:send_request_defer():610] handle sender defer: 12
+2024-03-30 16:17:08,235 INFO    SenderThread:3140027 [file_stream.py:finish():614] file stream finish called
+2024-03-30 16:17:08,843 INFO    SenderThread:3140027 [file_stream.py:finish():618] file stream finish is done
+2024-03-30 16:17:08,843 INFO    SenderThread:3140027 [sender.py:transition_state():614] send defer: 13
+2024-03-30 16:17:08,843 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: defer
+2024-03-30 16:17:08,843 INFO    HandlerThread:3140027 [handler.py:handle_request_defer():172] handle defer: 13
+2024-03-30 16:17:08,844 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: defer
+2024-03-30 16:17:08,844 INFO    SenderThread:3140027 [sender.py:send_request_defer():610] handle sender defer: 13
+2024-03-30 16:17:08,844 INFO    SenderThread:3140027 [sender.py:transition_state():614] send defer: 14
+2024-03-30 16:17:08,844 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: defer
+2024-03-30 16:17:08,844 INFO    HandlerThread:3140027 [handler.py:handle_request_defer():172] handle defer: 14
+2024-03-30 16:17:08,845 DEBUG   SenderThread:3140027 [sender.py:send():379] send: final
+2024-03-30 16:17:08,845 DEBUG   SenderThread:3140027 [sender.py:send():379] send: footer
+2024-03-30 16:17:08,845 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: defer
+2024-03-30 16:17:08,845 INFO    SenderThread:3140027 [sender.py:send_request_defer():610] handle sender defer: 14
+2024-03-30 16:17:08,846 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-30 16:17:08,846 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: poll_exit
+2024-03-30 16:17:08,846 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-30 16:17:08,847 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: server_info
+2024-03-30 16:17:08,847 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: poll_exit
+2024-03-30 16:17:08,847 DEBUG   SenderThread:3140027 [sender.py:send_request():406] send_request: server_info
+2024-03-30 16:17:08,849 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: get_summary
+2024-03-30 16:17:08,850 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: sampled_history
+2024-03-30 16:17:08,851 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-30 16:17:09,038 INFO    MainThread:3140027 [wandb_run.py:_footer_history_summary_info():3920] rendering history
+2024-03-30 16:17:09,038 INFO    MainThread:3140027 [wandb_run.py:_footer_history_summary_info():3952] rendering summary
+2024-03-30 16:17:09,038 INFO    MainThread:3140027 [wandb_run.py:_footer_sync_info():3879] logging synced files
+2024-03-30 16:17:09,038 DEBUG   HandlerThread:3140027 [handler.py:handle_request():146] handle_request: shutdown
+2024-03-30 16:17:09,038 INFO    HandlerThread:3140027 [handler.py:finish():866] shutting down handler
+2024-03-30 16:17:09,847 INFO    WriterThread:3140027 [datastore.py:close():296] close: /home/ubuntu/ejpark/Condenser/wandb/run-20240330_160539-18a272lg/run-18a272lg.wandb
+2024-03-30 16:17:10,037 INFO    SenderThread:3140027 [sender.py:finish():1546] shutting down sender
+2024-03-30 16:17:10,038 INFO    SenderThread:3140027 [file_pusher.py:finish():172] shutting down file pusher
+2024-03-30 16:17:10,038 INFO    SenderThread:3140027 [file_pusher.py:join():178] waiting for file pusher

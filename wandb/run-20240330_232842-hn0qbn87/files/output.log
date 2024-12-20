@@ -1,0 +1,207 @@
+
+[34m[1mwandb[39m[22m: [33mWARNING[39m Calling wandb.login() after wandb.init() has no effect.
+03/30/2024 23:29:25 - WARNING - __main__ -   Process rank: 0, device: cuda:0, n_gpu: 1distributed training: True, 16-bits training: False
+03/30/2024 23:29:25 - INFO - __main__ -   Training/evaluation parameters CoCondenserPreTrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+cache_chunk_size=-1,
+data_seed=None,
+dataloader_drop_last=True,
+dataloader_num_workers=4,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=5000.0,
+evaluation_strategy=no,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0001,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=co_condenser_pretrain/runs/Mar30_23-28-53_gpu-1,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=1.0,
+logging_strategy=steps,
+lr_scheduler_kwargs={},
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_cuda=False,
+num_train_epochs=8.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=co_condenser_pretrain,
+overwrite_output_dir=True,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=32,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=False,
+report_to=['wandb'],
+resume_from_checkpoint=None,
+run_name=co_condenser_pretrain,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=20000,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+split_batches=None,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.1,
+warmup_steps=0,
+weight_decay=0.01,
+)
+[INFO|configuration_utils.py:724] 2024-03-30 23:29:25,531 >> loading configuration file /home/ubuntu/ejpark/checkpoint-260000/config.json
+[INFO|configuration_utils.py:789] 2024-03-30 23:29:25,532 >> Model config BertConfig {
+  "_name_or_path": "/home/ubuntu/ejpark/checkpoint-260000/",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "torch_dtype": "float32",
+  "transformers_version": "4.39.1",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+[INFO|tokenization_utils_base.py:2082] 2024-03-30 23:29:25,533 >> loading file vocab.txt
+[INFO|tokenization_utils_base.py:2082] 2024-03-30 23:29:25,533 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2082] 2024-03-30 23:29:25,534 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2082] 2024-03-30 23:29:25,534 >> loading file tokenizer_config.json
+[INFO|tokenization_utils_base.py:2082] 2024-03-30 23:29:25,534 >> loading file tokenizer.json
+[INFO|modeling_utils.py:3280] 2024-03-30 23:29:25,613 >> loading weights file /home/ubuntu/ejpark/checkpoint-260000/model.safetensors
+[INFO|configuration_utils.py:928] 2024-03-30 23:29:25,623 >> Generate config GenerationConfig {
+  "pad_token_id": 0
+}
+[INFO|modeling_utils.py:4024] 2024-03-30 23:29:27,377 >> All model checkpoint weights were used when initializing BertForMaskedLM.
+[INFO|modeling_utils.py:4032] 2024-03-30 23:29:27,377 >> All the weights of BertForMaskedLM were initialized from the model checkpoint at /home/ubuntu/ejpark/checkpoint-260000/.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use BertForMaskedLM for predictions without further training.
+[INFO|configuration_utils.py:881] 2024-03-30 23:29:27,393 >> loading configuration file /home/ubuntu/ejpark/checkpoint-260000/generation_config.json
+[INFO|configuration_utils.py:928] 2024-03-30 23:29:27,394 >> Generate config GenerationConfig {
+  "pad_token_id": 0
+}
+03/30/2024 23:29:27 - INFO - modeling -   loading extra weights from local files
+c_head.0.attention.self.query.weight
+c_head.0.attention.self.query.bias
+c_head.0.attention.self.key.weight
+c_head.0.attention.self.key.bias
+c_head.0.attention.self.value.weight
+c_head.0.attention.self.value.bias
+c_head.0.attention.output.dense.weight
+c_head.0.attention.output.dense.bias
+c_head.0.attention.output.LayerNorm.weight
+c_head.0.attention.output.LayerNorm.bias
+c_head.0.intermediate.dense.weight
+c_head.0.intermediate.dense.bias
+c_head.0.output.dense.weight
+c_head.0.output.dense.bias
+c_head.0.output.LayerNorm.weight
+c_head.0.output.LayerNorm.bias
+c_head.1.attention.self.query.weight
+c_head.1.attention.self.query.bias
+c_head.1.attention.self.key.weight
+c_head.1.attention.self.key.bias
+c_head.1.attention.self.value.weight
+c_head.1.attention.self.value.bias
+c_head.1.attention.output.dense.weight
+c_head.1.attention.output.dense.bias
+c_head.1.attention.output.LayerNorm.weight
+c_head.1.attention.output.LayerNorm.bias
+c_head.1.intermediate.dense.weight
+c_head.1.intermediate.dense.bias
+c_head.1.output.dense.weight
+c_head.1.output.dense.bias
+c_head.1.output.LayerNorm.weight
+c_head.1.output.LayerNorm.bias
+lm.bert.embeddings.word_embeddings.weight: torch.Size([61790, 768])
+lm.bert.embeddings.position_embeddings.weight: torch.Size([512, 768])
+lm.bert.embeddings.token_type_embeddings.weight: torch.Size([2, 768])
+lm.bert.embeddings.LayerNorm.weight: torch.Size([768])
+lm.bert.embeddings.LayerNorm.bias: torch.Size([768])

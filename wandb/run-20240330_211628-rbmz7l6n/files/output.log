@@ -1,0 +1,87 @@
+
+wandb: WARNING Calling wandb.login() after wandb.init() has no effect.
+03/30/2024 21:17:32 - WARNING - __main__ -   Process rank: 1, device: cuda:1, n_gpu: 1distributed training: True, 16-bits training: False
+-------------------------------------------
+loading json . . .
+/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/accelerate/accelerator.py:432: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead:
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+/home/ubuntu/ejpark/new_index_diet__.json load complete! 482.2506446838379 seconds took.
+/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/transformers/modeling_utils.py:977: FutureWarning: The `device` argument is deprecated and will be removed in v5 of Transformers.
+  warnings.warn(
+/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/autograd/__init__.py:251: UserWarning: Error detected in LogSoftmaxBackward0. Traceback of forward call that caused the error:
+  File "/home/ubuntu/ejpark/Condenser/run_co_pre_training.py", line 221, in <module>
+    main()
+  File "/home/ubuntu/ejpark/Condenser/run_co_pre_training.py", line 211, in main
+    trainer.train()
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 1780, in train
+    return inner_training_loop(
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 2118, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/home/ubuntu/ejpark/Condenser/trainer.py", line 138, in training_step
+    return super(CoCondenserPretrainer, self).training_step(model, inputs)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 3036, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/home/ubuntu/ejpark/Condenser/trainer.py", line 129, in compute_loss
+    return model(inputs, labels, grad_cache=grad_cache, chunk_offset=chunk_offset)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1519, in forward
+    else self._run_ddp_forward(*inputs, **kwargs)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1355, in _run_ddp_forward
+    return self.module(*inputs, **kwargs)  # type: ignore[index]
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/ejpark/Condenser/modeling.py", line 250, in forward
+    co_loss = self.compute_contrastive_loss(co_cls_hiddens)
+  File "/home/ubuntu/ejpark/Condenser/modeling.py", line 280, in compute_contrastive_loss
+    co_loss = F.cross_entropy(similarities, self.co_target) * self._world_size()
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/nn/functional.py", line 3053, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(input, target, weight, _Reduction.get_enum(reduction), ignore_index, label_smoothing)
+ (Triggered internally at ../torch/csrc/autograd/python_anomaly_mode.cpp:114.)
+  Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+hidden state: tensor([[nan, nan, nan,  ..., nan, nan, nan],
+        [nan, nan, nan,  ..., nan, nan, nan],
+        [nan, nan, nan,  ..., nan, nan, nan],
+        ...,
+        [nan, nan, nan,  ..., nan, nan, nan],
+        [nan, nan, nan,  ..., nan, nan, nan],
+        [nan, nan, nan,  ..., nan, nan, nan]], device='cuda:1',
+       grad_fn=<CatBackward0>)
+similarities: tensor([[nan, nan, nan,  ..., nan, nan, nan],
+        [nan, nan, nan,  ..., nan, nan, nan],
+        [nan, nan, nan,  ..., nan, nan, nan],
+        ...,
+        [nan, nan, nan,  ..., nan, nan, nan],
+        [nan, nan, nan,  ..., nan, nan, nan],
+        [nan, nan, nan,  ..., nan, nan, nan]], device='cuda:1',
+       grad_fn=<MmBackward0>)
+co_target (batch_loss): tensor([ 1,  0,  3,  2,  5,  4,  7,  6,  9,  8, 11, 10, 13, 12, 15, 14, 17, 16,
+        19, 18, 21, 20, 23, 22, 25, 24, 27, 26, 29, 28, 31, 30, 33, 32, 35, 34,
+        37, 36, 39, 38, 41, 40, 43, 42, 45, 44, 47, 46, 49, 48, 51, 50, 53, 52,
+        55, 54, 57, 56, 59, 58, 61, 60, 63, 62], device='cuda:1')
+loss: nan, co: nan
+Traceback (most recent call last):
+  File "/home/ubuntu/ejpark/Condenser/run_co_pre_training.py", line 221, in <module>
+    main()
+  File "/home/ubuntu/ejpark/Condenser/run_co_pre_training.py", line 211, in main
+    trainer.train()
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 1780, in train
+    return inner_training_loop(
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 2118, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/home/ubuntu/ejpark/Condenser/trainer.py", line 138, in training_step
+    return super(CoCondenserPretrainer, self).training_step(model, inputs)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 3045, in training_step
+    self.accelerator.backward(loss)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/accelerate/accelerator.py", line 2001, in backward
+    loss.backward(**kwargs)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/_tensor.py", line 492, in backward
+    torch.autograd.backward(
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/autograd/__init__.py", line 251, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'LogSoftmaxBackward0' returned nan values in its 0th output.

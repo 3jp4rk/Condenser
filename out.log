@@ -1,0 +1,385 @@
+[2024-03-30 16:45:40,529] torch.distributed.run: [WARNING] 
+[2024-03-30 16:45:40,529] torch.distributed.run: [WARNING] *****************************************
+[2024-03-30 16:45:40,529] torch.distributed.run: [WARNING] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+[2024-03-30 16:45:40,529] torch.distributed.run: [WARNING] *****************************************
+wandb: Currently logged in as: 3jp4rk. Use `wandb login --relogin` to force relogin
+wandb: Currently logged in as: 3jp4rk. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.16.5
+wandb: Run data is saved locally in /home/ubuntu/ejpark/Condenser/wandb/run-20240330_164544-gjr7cux5
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run elated-dust-36
+wandb: ⭐️ View project at https://wandb.ai/3jp4rk/Condenser
+wandb: 🚀 View run at https://wandb.ai/3jp4rk/Condenser/runs/gjr7cux5/workspace
+wandb: Tracking run with wandb version 0.16.5
+wandb: Run data is saved locally in /home/ubuntu/ejpark/Condenser/wandb/run-20240330_164544-m6pivih1
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run dark-totem-35
+wandb: ⭐️ View project at https://wandb.ai/3jp4rk/Condenser
+wandb: 🚀 View run at https://wandb.ai/3jp4rk/Condenser/runs/m6pivih1/workspace
+wandb: WARNING Calling wandb.login() after wandb.init() has no effect.
+wandb: WARNING Calling wandb.login() after wandb.init() has no effect.
+03/30/2024 16:46:27 - WARNING - __main__ -   Process rank: 0, device: cuda:0, n_gpu: 1distributed training: True, 16-bits training: False
+03/30/2024 16:46:27 - INFO - __main__ -   Training/evaluation parameters CoCondenserPreTrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+cache_chunk_size=-1,
+data_seed=None,
+dataloader_drop_last=True,
+dataloader_num_workers=4,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=5000.0,
+evaluation_strategy=no,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0001,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=co_condenser_pretrain/runs/Mar30_16-45-54_gpu-1,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=1.0,
+logging_strategy=steps,
+lr_scheduler_kwargs={},
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_cuda=False,
+num_train_epochs=8.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=co_condenser_pretrain,
+overwrite_output_dir=True,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=16,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=False,
+report_to=['wandb'],
+resume_from_checkpoint=None,
+run_name=co_condenser_pretrain,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=20000,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+split_batches=None,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.1,
+warmup_steps=0,
+weight_decay=0.01,
+)
+[INFO|configuration_utils.py:724] 2024-03-30 16:46:27,424 >> loading configuration file /home/ubuntu/ejpark/checkpoint-260000/config.json
+[INFO|configuration_utils.py:789] 2024-03-30 16:46:27,425 >> Model config BertConfig {
+  "_name_or_path": "/home/ubuntu/ejpark/checkpoint-260000/",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "torch_dtype": "float32",
+  "transformers_version": "4.39.1",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 61790
+}
+
+[INFO|tokenization_utils_base.py:2082] 2024-03-30 16:46:27,426 >> loading file vocab.txt
+[INFO|tokenization_utils_base.py:2082] 2024-03-30 16:46:27,426 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2082] 2024-03-30 16:46:27,426 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2082] 2024-03-30 16:46:27,427 >> loading file tokenizer_config.json
+[INFO|tokenization_utils_base.py:2082] 2024-03-30 16:46:27,427 >> loading file tokenizer.json
+[INFO|modeling_utils.py:3280] 2024-03-30 16:46:27,598 >> loading weights file /home/ubuntu/ejpark/checkpoint-260000/model.safetensors
+[INFO|configuration_utils.py:928] 2024-03-30 16:46:27,607 >> Generate config GenerationConfig {
+  "pad_token_id": 0
+}
+
+[INFO|modeling_utils.py:4024] 2024-03-30 16:46:28,209 >> All model checkpoint weights were used when initializing BertForMaskedLM.
+
+[INFO|modeling_utils.py:4032] 2024-03-30 16:46:28,210 >> All the weights of BertForMaskedLM were initialized from the model checkpoint at /home/ubuntu/ejpark/checkpoint-260000/.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use BertForMaskedLM for predictions without further training.
+[INFO|configuration_utils.py:881] 2024-03-30 16:46:28,212 >> loading configuration file /home/ubuntu/ejpark/checkpoint-260000/generation_config.json
+[INFO|configuration_utils.py:928] 2024-03-30 16:46:28,212 >> Generate config GenerationConfig {
+  "pad_token_id": 0
+}
+
+03/30/2024 16:46:28 - INFO - modeling -   loading extra weights from local files
+-------------------------------------------
+loading json . . .
+03/30/2024 16:46:42 - WARNING - __main__ -   Process rank: 1, device: cuda:1, n_gpu: 1distributed training: True, 16-bits training: False
+-------------------------------------------
+loading json . . .
+/home/ubuntu/ejpark/new_index_diet__.json load complete! 481.99348640441895 seconds took.
+03/30/2024 16:54:30 - INFO - trainer -   Initializing Gradient Cache Trainer
+/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/accelerate/accelerator.py:432: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead: 
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+/home/ubuntu/ejpark/new_index_diet__.json load complete! 475.4528498649597 seconds took.
+/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/accelerate/accelerator.py:432: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead: 
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+[INFO|trainer.py:1969] 2024-03-30 16:56:28,506 >> ***** Running training *****
+[INFO|trainer.py:1970] 2024-03-30 16:56:28,506 >>   Num examples = 7,204
+[INFO|trainer.py:1971] 2024-03-30 16:56:28,506 >>   Num Epochs = 8
+[INFO|trainer.py:1972] 2024-03-30 16:56:28,507 >>   Instantaneous batch size per device = 16
+[INFO|trainer.py:1975] 2024-03-30 16:56:28,507 >>   Total train batch size (w. parallel, distributed & accumulation) = 32
+[INFO|trainer.py:1976] 2024-03-30 16:56:28,507 >>   Gradient Accumulation steps = 1
+[INFO|trainer.py:1977] 2024-03-30 16:56:28,507 >>   Total optimization steps = 1,800
+[INFO|trainer.py:1978] 2024-03-30 16:56:28,508 >>   Number of trainable parameters = 147,735,134
+[INFO|integration_utils.py:723] 2024-03-30 16:56:28,509 >> Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+  0%|          | 0/1800 [00:00<?, ?it/s]/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/transformers/modeling_utils.py:977: FutureWarning: The `device` argument is deprecated and will be removed in v5 of Transformers.
+  warnings.warn(
+/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/transformers/modeling_utils.py:977: FutureWarning: The `device` argument is deprecated and will be removed in v5 of Transformers.
+  warnings.warn(
+[W reducer.cpp:1346] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1346] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+  0%|          | 1/1800 [05:44<172:20:23, 344.87s/it]                                                     {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 5.555555555555556e-07, 'epoch': 0.0}
+  0%|          | 1/1800 [05:44<172:20:23, 344.87s/it]  0%|          | 2/1800 [05:47<71:37:38, 143.41s/it]                                                     {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.1111111111111112e-06, 'epoch': 0.01}
+  0%|          | 2/1800 [05:47<71:37:38, 143.41s/it]  0%|          | 3/1800 [05:48<39:12:08, 78.54s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.6666666666666667e-06, 'epoch': 0.01}
+  0%|          | 3/1800 [05:48<39:12:08, 78.54s/it]  0%|          | 4/1800 [08:26<54:51:11, 109.95s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 2.2222222222222225e-06, 'epoch': 0.02}
+  0%|          | 4/1800 [08:26<54:51:11, 109.95s/it]  0%|          | 5/1800 [08:28<35:17:31, 70.78s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 2.777777777777778e-06, 'epoch': 0.02}
+  0%|          | 5/1800 [08:28<35:17:31, 70.78s/it]  0%|          | 6/1800 [08:29<23:30:18, 47.17s/it]                                                   {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 3.3333333333333333e-06, 'epoch': 0.03}
+  0%|          | 6/1800 [08:29<23:30:18, 47.17s/it]  0%|          | 7/1800 [08:30<16:01:43, 32.18s/it]                                                   {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 3.888888888888889e-06, 'epoch': 0.03}
+  0%|          | 7/1800 [08:30<16:01:43, 32.18s/it]  0%|          | 8/1800 [13:36<59:25:40, 119.39s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 4.444444444444445e-06, 'epoch': 0.04}
+  0%|          | 8/1800 [13:36<59:25:40, 119.39s/it]  0%|          | 9/1800 [13:38<41:02:01, 82.48s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 5e-06, 'epoch': 0.04}
+  0%|          | 9/1800 [13:38<41:02:01, 82.48s/it]  1%|          | 10/1800 [13:39<28:33:14, 57.43s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 5.555555555555556e-06, 'epoch': 0.04}
+  1%|          | 10/1800 [13:39<28:33:14, 57.43s/it]  1%|          | 11/1800 [13:40<20:00:21, 40.26s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 6.111111111111111e-06, 'epoch': 0.05}
+  1%|          | 11/1800 [13:40<20:00:21, 40.26s/it]  1%|          | 12/1800 [18:37<58:47:17, 118.37s/it]                                                     {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 6.666666666666667e-06, 'epoch': 0.05}
+  1%|          | 12/1800 [18:37<58:47:17, 118.37s/it]  1%|          | 13/1800 [18:39<41:09:21, 82.91s/it]                                                     {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 7.222222222222222e-06, 'epoch': 0.06}
+  1%|          | 13/1800 [18:39<41:09:21, 82.91s/it]  1%|          | 14/1800 [18:40<28:54:27, 58.27s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 7.777777777777777e-06, 'epoch': 0.06}
+  1%|          | 14/1800 [18:40<28:54:27, 58.27s/it]  1%|          | 15/1800 [18:41<20:22:52, 41.11s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 8.333333333333334e-06, 'epoch': 0.07}
+  1%|          | 15/1800 [18:41<20:22:52, 41.11s/it]  1%|          | 16/1800 [21:06<35:47:49, 72.24s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 8.88888888888889e-06, 'epoch': 0.07}
+  1%|          | 16/1800 [21:06<35:47:49, 72.24s/it]  1%|          | 17/1800 [21:07<25:13:00, 50.91s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 9.444444444444445e-06, 'epoch': 0.08}
+  1%|          | 17/1800 [21:07<25:13:00, 50.91s/it]  1%|          | 18/1800 [23:11<36:00:08, 72.73s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1e-05, 'epoch': 0.08}
+  1%|          | 18/1800 [23:11<36:00:08, 72.73s/it]  1%|          | 19/1800 [23:12<25:22:20, 51.29s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.0555555555555555e-05, 'epoch': 0.08}
+  1%|          | 19/1800 [23:12<25:22:20, 51.29s/it]  1%|          | 20/1800 [26:30<47:12:45, 95.49s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.1111111111111112e-05, 'epoch': 0.09}
+  1%|          | 20/1800 [26:30<47:12:45, 95.49s/it]  1%|          | 21/1800 [26:32<33:13:10, 67.22s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.1666666666666668e-05, 'epoch': 0.09}
+  1%|          | 21/1800 [26:32<33:13:10, 67.22s/it]  1%|          | 22/1800 [26:33<23:26:01, 47.45s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.2222222222222222e-05, 'epoch': 0.1}
+  1%|          | 22/1800 [26:33<23:26:01, 47.45s/it]  1%|▏         | 23/1800 [26:34<16:35:20, 33.61s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.2777777777777777e-05, 'epoch': 0.1}
+  1%|▏         | 23/1800 [26:34<16:35:20, 33.61s/it]  1%|▏         | 24/1800 [30:35<47:12:30, 95.69s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.3333333333333333e-05, 'epoch': 0.11}
+  1%|▏         | 24/1800 [30:35<47:12:30, 95.69s/it]  1%|▏         | 25/1800 [30:36<33:13:19, 67.38s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.388888888888889e-05, 'epoch': 0.11}
+  1%|▏         | 25/1800 [30:36<33:13:19, 67.38s/it]  1%|▏         | 26/1800 [30:38<23:26:16, 47.56s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.4444444444444444e-05, 'epoch': 0.12}
+  1%|▏         | 26/1800 [30:38<23:26:16, 47.56s/it]  2%|▏         | 27/1800 [30:39<16:35:34, 33.69s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.5e-05, 'epoch': 0.12}
+  2%|▏         | 27/1800 [30:39<16:35:34, 33.69s/it]  2%|▏         | 28/1800 [33:18<35:02:43, 71.20s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.5555555555555555e-05, 'epoch': 0.12}
+  2%|▏         | 28/1800 [33:18<35:02:43, 71.20s/it]  2%|▏         | 29/1800 [33:19<24:42:49, 50.24s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.6111111111111115e-05, 'epoch': 0.13}
+  2%|▏         | 29/1800 [33:19<24:42:49, 50.24s/it]  2%|▏         | 30/1800 [33:20<17:29:08, 35.56s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.6666666666666667e-05, 'epoch': 0.13}
+  2%|▏         | 30/1800 [33:20<17:29:08, 35.56s/it]  2%|▏         | 31/1800 [33:22<12:25:43, 25.29s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.7222222222222224e-05, 'epoch': 0.14}
+  2%|▏         | 31/1800 [33:22<12:25:43, 25.29s/it]  2%|▏         | 32/1800 [37:24<44:22:28, 90.36s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.777777777777778e-05, 'epoch': 0.14}
+  2%|▏         | 32/1800 [37:24<44:22:28, 90.36s/it]  2%|▏         | 33/1800 [37:25<31:14:24, 63.65s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.8333333333333333e-05, 'epoch': 0.15}
+  2%|▏         | 33/1800 [37:25<31:14:24, 63.65s/it]  2%|▏         | 34/1800 [37:27<22:03:03, 44.95s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.888888888888889e-05, 'epoch': 0.15}
+  2%|▏         | 34/1800 [37:27<22:03:03, 44.95s/it]  2%|▏         | 35/1800 [37:28<15:37:21, 31.86s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 1.9444444444444445e-05, 'epoch': 0.16}
+  2%|▏         | 35/1800 [37:28<15:37:21, 31.86s/it]  2%|▏         | 36/1800 [41:56<50:24:48, 102.88s/it]                                                     {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 2e-05, 'epoch': 0.16}
+  2%|▏         | 36/1800 [41:56<50:24:48, 102.88s/it]  2%|▏         | 37/1800 [41:58<35:27:58, 72.42s/it]                                                     {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 2.0555555555555555e-05, 'epoch': 0.16}
+  2%|▏         | 37/1800 [41:58<35:27:58, 72.42s/it]  2%|▏         | 38/1800 [41:59<25:00:27, 51.09s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 2.111111111111111e-05, 'epoch': 0.17}
+  2%|▏         | 38/1800 [41:59<25:00:27, 51.09s/it]  2%|▏         | 39/1800 [42:00<17:41:24, 36.16s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 2.1666666666666667e-05, 'epoch': 0.17}
+  2%|▏         | 39/1800 [42:00<17:41:24, 36.16s/it]  2%|▏         | 40/1800 [44:34<34:57:17, 71.50s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 2.2222222222222223e-05, 'epoch': 0.18}
+  2%|▏         | 40/1800 [44:34<34:57:17, 71.50s/it]  2%|▏         | 41/1800 [44:36<24:38:57, 50.45s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 2.277777777777778e-05, 'epoch': 0.18}
+  2%|▏         | 41/1800 [44:36<24:38:57, 50.45s/it]  2%|▏         | 42/1800 [44:37<17:26:20, 35.71s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 2.3333333333333336e-05, 'epoch': 0.19}
+  2%|▏         | 42/1800 [44:37<17:26:20, 35.71s/it]  2%|▏         | 43/1800 [44:38<12:23:41, 25.40s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 2.3888888888888892e-05, 'epoch': 0.19}
+  2%|▏         | 43/1800 [44:38<12:23:41, 25.40s/it]  2%|▏         | 44/1800 [49:05<47:39:06, 97.69s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 2.4444444444444445e-05, 'epoch': 0.2}
+  2%|▏         | 44/1800 [49:05<47:39:06, 97.69s/it]  2%|▎         | 45/1800 [49:06<33:31:53, 68.78s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 2.5e-05, 'epoch': 0.2}
+  2%|▎         | 45/1800 [49:06<33:31:53, 68.78s/it]  3%|▎         | 46/1800 [49:07<23:39:09, 48.55s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 2.5555555555555554e-05, 'epoch': 0.2}
+  3%|▎         | 46/1800 [49:07<23:39:09, 48.55s/it]  3%|▎         | 47/1800 [49:45<22:03:05, 45.29s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 2.6111111111111114e-05, 'epoch': 0.21}
+  3%|▎         | 47/1800 [49:45<22:03:05, 45.29s/it]  3%|▎         | 48/1800 [53:03<44:19:04, 91.06s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 2.6666666666666667e-05, 'epoch': 0.21}
+  3%|▎         | 48/1800 [53:03<44:19:04, 91.06s/it]  3%|▎         | 49/1800 [53:04<31:11:56, 64.14s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 2.7222222222222223e-05, 'epoch': 0.22}
+  3%|▎         | 49/1800 [53:04<31:11:56, 64.14s/it]  3%|▎         | 50/1800 [53:06<22:01:13, 45.30s/it]                                                    {'loss': 0.0, 'grad_norm': nan, 'learning_rate': 2.777777777777778e-05, 'epoch': 0.22}
+  3%|▎         | 50/1800 [53:06<22:01:13, 45.30s/it]Traceback (most recent call last):
+  File "/home/ubuntu/ejpark/Condenser/run_co_pre_training.py", line 218, in <module>
+    main()
+  File "/home/ubuntu/ejpark/Condenser/run_co_pre_training.py", line 208, in main
+    trainer.train()
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 1780, in train
+    return inner_training_loop(
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/transformers/trainer.py", line 2085, in _inner_training_loop
+    for step, inputs in enumerate(epoch_iterator):
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/accelerate/data_loader.py", line 462, in __iter__
+    next_batch = next(dataloader_iter)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1325, in _next_data
+    return self._process_data(data)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/_utils.py", line 694, in reraise
+    raise exception
+ValueError: Caught ValueError in DataLoader worker process 3.
+Original Traceback (most recent call last):
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/ubuntu/ejpark/Condenser/../marco_dataset.py", line 289, in __getitem__
+    return self.get_data(self.train2full(idx))
+  File "/home/ubuntu/ejpark/Condenser/../marco_dataset.py", line 331, in get_data
+    selected = get_doc_passage(self.data_idx, ds, idx)
+  File "/home/ubuntu/ejpark/Condenser/../marco_dataset.py", line 191, in get_doc_passage
+    passages = random.sample(doc_items, 2)
+  File "/usr/lib/python3.9/random.py", line 449, in sample
+    raise ValueError("Sample larger than population or is negative")
+ValueError: Sample larger than population or is negative
+
+wandb: - 0.007 MB of 0.007 MB uploadedwandb: \ 0.007 MB of 0.007 MB uploadedwandb: | 0.007 MB of 0.007 MB uploadedwandb: / 0.007 MB of 0.007 MB uploadedwandb: - 0.007 MB of 0.007 MB uploadedwandb: \ 0.007 MB of 0.007 MB uploadedwandb: | 0.007 MB of 0.027 MB uploadedwandb: / 0.027 MB of 0.027 MB uploadedwandb: 
+wandb: Run history:
+wandb:         train/epoch ▁▁▁▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇███
+wandb:   train/global_step ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇███
+wandb: train/learning_rate ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇███
+wandb:          train/loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:         train/epoch 0.22
+wandb:   train/global_step 50
+wandb:     train/grad_norm nan
+wandb: train/learning_rate 3e-05
+wandb:          train/loss 0.0
+wandb: 
+wandb: 🚀 View run dark-totem-35 at: https://wandb.ai/3jp4rk/Condenser/runs/m6pivih1/workspace
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240330_164544-m6pivih1/logs
+Exception in thread Thread-4:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/threading.py", line 980, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.9/threading.py", line 917, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/utils/data/_utils/pin_memory.py", line 54, in _pin_memory_loop
+    do_one_step()
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/utils/data/_utils/pin_memory.py", line 31, in do_one_step
+    r = in_queue.get(timeout=MP_STATUS_CHECK_INTERVAL)
+  File "/usr/lib/python3.9/multiprocessing/queues.py", line 122, in get
+    return _ForkingPickler.loads(res)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/multiprocessing/reductions.py", line 355, in rebuild_storage_fd
+    fd = df.detach()
+  File "/usr/lib/python3.9/multiprocessing/resource_sharer.py", line 57, in detach
+    with _resource_sharer.get_connection(self._id) as conn:
+  File "/usr/lib/python3.9/multiprocessing/resource_sharer.py", line 86, in get_connection
+    c = Client(address, authkey=process.current_process().authkey)
+  File "/usr/lib/python3.9/multiprocessing/connection.py", line 508, in Client
+    answer_challenge(c, authkey)
+  File "/usr/lib/python3.9/multiprocessing/connection.py", line 752, in answer_challenge
+    message = connection.recv_bytes(256)         # reject large message
+  File "/usr/lib/python3.9/multiprocessing/connection.py", line 216, in recv_bytes
+    buf = self._recv_bytes(maxlength)
+  File "/usr/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
+    buf = self._recv(4)
+  File "/usr/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-03-30 17:57:44,658] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 3152960 closing signal SIGTERM
+[2024-03-30 17:57:44,659] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 1) local_rank: 0 (pid: 3152959) of binary: /home/ubuntu/ejpark/con_venv/bin/python3.9
+Traceback (most recent call last):
+  File "/home/ubuntu/ejpark/con_venv/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 346, in wrapper
+    return f(*args, **kwargs)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/distributed/run.py", line 806, in main
+    run(args)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+run_co_pre_training.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-03-30_17:57:44
+  host      : gpu-1.novalocal
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 3152959)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

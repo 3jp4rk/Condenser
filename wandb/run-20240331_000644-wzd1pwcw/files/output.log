@@ -1,0 +1,13 @@
+[34m[1mwandb[39m[22m: [33mWARNING[39m Calling wandb.login() after wandb.init() has no effect.
+Traceback (most recent call last):
+  File "/home/ubuntu/ejpark/Condenser/run_co_pre_training.py", line 227, in <module>
+    main()
+  File "/home/ubuntu/ejpark/Condenser/run_co_pre_training.py", line 75, in main
+    parser = HfArgumentParser((ModelArguments, DataTrainingArguments, TrainingArguments))
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/transformers/hf_argparser.py", line 52, in __init__
+    self._add_dataclass_arguments(dtype)
+  File "/home/ubuntu/ejpark/con_venv/lib/python3.9/site-packages/transformers/hf_argparser.py", line 93, in _add_dataclass_arguments
+    elif hasattr(field.type, "__origin__") and issubclass(field.type.__origin__, List):
+  File "/usr/lib/python3.9/typing.py", line 852, in __subclasscheck__
+    return issubclass(cls, self.__origin__)
+TypeError: issubclass() arg 1 must be a class

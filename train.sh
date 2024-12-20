@@ -1,0 +1,21 @@
+torchrun --nproc_per_node 4 run_pre_training.py \
+  --output_dir "./condenser_pretrain" \
+  --model_name_or_path bert-base-uncased \
+  --tokenizer_name tunib/electra-ko-en-base \
+  --do_train \
+  --report_to "wandb" \
+  --logging_steps 1 \
+  --remove_unused_columns false \
+  --save_steps 20000 \
+  --per_device_train_batch_size 16 \
+  --gradient_accumulation_steps 4 \
+  --warmup_ratio 0.1 \
+  --learning_rate 1e-4 \
+  --num_train_epochs 8 \
+  --overwrite_output_dir \
+  --dataloader_num_workers 32 \
+  --n_head_layers 2 \
+  --skip_from 6 \
+  --max_seq_length 512 \
+  --weight_decay 0.01 \
+  --late_mlm

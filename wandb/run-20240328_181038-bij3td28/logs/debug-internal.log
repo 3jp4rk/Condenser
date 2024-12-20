@@ -1,0 +1,59 @@
+2024-03-28 18:10:38,459 INFO    StreamThr :2291466 [internal.py:wandb_internal():86] W&B internal server running at pid: 2291466, started at: 2024-03-28 18:10:38.458877
+2024-03-28 18:10:38,461 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: status
+2024-03-28 18:10:38,464 INFO    WriterThread:2291466 [datastore.py:open_for_write():87] open: /home/ubuntu/ejpark/Condenser/wandb/run-20240328_181038-bij3td28/run-bij3td28.wandb
+2024-03-28 18:10:38,465 DEBUG   SenderThread:2291466 [sender.py:send():379] send: header
+2024-03-28 18:10:38,501 DEBUG   SenderThread:2291466 [sender.py:send():379] send: run
+2024-03-28 18:10:39,001 INFO    SenderThread:2291466 [dir_watcher.py:__init__():211] watching files in: /home/ubuntu/ejpark/Condenser/wandb/run-20240328_181038-bij3td28/files
+2024-03-28 18:10:39,002 INFO    SenderThread:2291466 [sender.py:_start_run_threads():1124] run started: bij3td28 with start time 1711617038.458579
+2024-03-28 18:10:39,012 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: check_version
+2024-03-28 18:10:39,013 DEBUG   SenderThread:2291466 [sender.py:send_request():406] send_request: check_version
+2024-03-28 18:10:39,125 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: run_start
+2024-03-28 18:10:41,326 DEBUG   HandlerThread:2291466 [system_info.py:__init__():26] System info init
+2024-03-28 18:10:41,326 DEBUG   HandlerThread:2291466 [system_info.py:__init__():41] System info init done
+2024-03-28 18:10:41,326 INFO    HandlerThread:2291466 [system_monitor.py:start():194] Starting system monitor
+2024-03-28 18:10:41,326 INFO    SystemMonitor:2291466 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-03-28 18:10:41,326 INFO    HandlerThread:2291466 [system_monitor.py:probe():214] Collecting system info
+2024-03-28 18:10:41,327 INFO    SystemMonitor:2291466 [interfaces.py:start():190] Started cpu monitoring
+2024-03-28 18:10:41,329 INFO    SystemMonitor:2291466 [interfaces.py:start():190] Started disk monitoring
+2024-03-28 18:10:41,330 INFO    SystemMonitor:2291466 [interfaces.py:start():190] Started gpu monitoring
+2024-03-28 18:10:41,331 INFO    SystemMonitor:2291466 [interfaces.py:start():190] Started memory monitoring
+2024-03-28 18:10:41,331 INFO    SystemMonitor:2291466 [interfaces.py:start():190] Started network monitoring
+2024-03-28 18:10:46,479 DEBUG   HandlerThread:2291466 [system_info.py:probe():150] Probing system
+2024-03-28 18:10:46,480 DEBUG   HandlerThread:2291466 [system_info.py:_probe_git():135] Probing git
+2024-03-28 18:10:46,505 DEBUG   HandlerThread:2291466 [system_info.py:_probe_git():143] Probing git done
+2024-03-28 18:10:46,505 DEBUG   HandlerThread:2291466 [system_info.py:probe():198] Probing system done
+2024-03-28 18:10:46,505 DEBUG   HandlerThread:2291466 [system_monitor.py:probe():223] {'os': 'Linux-5.15.0-86-generic-x86_64-with-glibc2.35', 'python': '3.9.18', 'heartbeatAt': '2024-03-28T09:10:46.479654', 'startedAt': '2024-03-28T09:10:38.454265', 'docker': None, 'cuda': None, 'args': ('--output_dir', 'co_condenser_pretrain', '--model_name_or_path', '/home/ubuntu/ejpark/checkpoint-260000/', '--do_train'), 'state': 'running', 'program': '/home/ubuntu/ejpark/Condenser/run_co_pre_training.py', 'codePathLocal': 'run_co_pre_training.py', 'codePath': 'run_co_pre_training.py', 'git': {'remote': 'https://github.com/3jp4rk/Condenser.git', 'commit': 'a3a479898881d3cabac5b19dcb0e3ba55cebd278'}, 'email': 'mari970@naver.com', 'root': '/home/ubuntu/ejpark/Condenser', 'host': 'gpu-1', 'username': 'ubuntu', 'executable': '/home/ubuntu/ejpark/con_venv/bin/python3.9', 'cpu_count': 48, 'cpu_count_logical': 48, 'cpu_freq': {'current': 2794.75, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}, {'current': 2794.75, 'min': 0.0, 'max': 0.0}], 'disk': {'/': {'total': 193.6498260498047, 'used': 86.92525482177734}}, 'gpu': 'NVIDIA A100-SXM4-80GB', 'gpu_count': 4, 'gpu_devices': [{'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}], 'memory': {'total': 885.4374961853027}}
+2024-03-28 18:10:46,505 INFO    HandlerThread:2291466 [system_monitor.py:probe():224] Finished collecting system info
+2024-03-28 18:10:46,505 INFO    HandlerThread:2291466 [system_monitor.py:probe():227] Publishing system info
+2024-03-28 18:10:46,506 INFO    HandlerThread:2291466 [system_monitor.py:probe():229] Finished publishing system info
+2024-03-28 18:10:46,508 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: status_report
+2024-03-28 18:10:46,508 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-28 18:10:46,509 DEBUG   SenderThread:2291466 [sender.py:send():379] send: files
+2024-03-28 18:10:46,509 INFO    SenderThread:2291466 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2024-03-28 18:10:46,556 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: python_packages
+2024-03-28 18:10:46,556 DEBUG   SenderThread:2291466 [sender.py:send_request():406] send_request: python_packages
+2024-03-28 18:10:46,557 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-28 18:10:46,557 DEBUG   SenderThread:2291466 [sender.py:send_request():406] send_request: stop_status
+2024-03-28 18:10:46,560 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-28 18:10:46,883 DEBUG   SenderThread:2291466 [sender.py:send():379] send: telemetry
+2024-03-28 18:10:47,005 INFO    Thread-12 :2291466 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ubuntu/ejpark/Condenser/wandb/run-20240328_181038-bij3td28/files/output.log
+2024-03-28 18:10:47,005 INFO    Thread-12 :2291466 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ubuntu/ejpark/Condenser/wandb/run-20240328_181038-bij3td28/files/wandb-metadata.json
+2024-03-28 18:10:47,005 INFO    Thread-12 :2291466 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ubuntu/ejpark/Condenser/wandb/run-20240328_181038-bij3td28/files/requirements.txt
+2024-03-28 18:10:47,328 INFO    wandb-upload_0:2291466 [upload_job.py:push():131] Uploaded file /tmp/tmp5yb2hs5pwandb/wfpxy61t-wandb-metadata.json
+2024-03-28 18:10:49,004 INFO    Thread-12 :2291466 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ubuntu/ejpark/Condenser/wandb/run-20240328_181038-bij3td28/files/output.log
+2024-03-28 18:10:49,884 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: status_report
+2024-03-28 18:10:54,885 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: status_report
+2024-03-28 18:10:59,886 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: status_report
+2024-03-28 18:11:04,886 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: status_report
+2024-03-28 18:11:06,127 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-28 18:11:06,168 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-28 18:11:06,168 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-28 18:11:09,891 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: status_report
+2024-03-28 18:11:11,009 INFO    Thread-12 :2291466 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ubuntu/ejpark/Condenser/wandb/run-20240328_181038-bij3td28/files/config.yaml
+2024-03-28 18:11:11,129 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-28 18:11:15,090 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: status_report
+2024-03-28 18:11:20,091 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: status_report
+2024-03-28 18:11:20,504 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-28 18:11:25,091 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: status_report
+2024-03-28 18:11:30,092 DEBUG   HandlerThread:2291466 [handler.py:handle_request():146] handle_request: status_report
+2024-03-28 18:11:31,133 INFO    MainThread:2291466 [internal.py:handle_exit():76] Internal process exited

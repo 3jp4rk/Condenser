@@ -1,0 +1,22 @@
+torchrun --nproc_per_node 3 run_co_pre_training.py \
+  --output_dir "/home/ubuntu/data/ejpark/co_condenser_pretrain_con_resumed" \
+  --model_name_or_path "/home/ubuntu/ejpark/co_condenser_pretrain_con_ckpt/checkpoint-3000" \
+  --do_train \
+  --report_to "wandb" \
+  --logging_steps 1 \
+  --remove_unused_columns false \
+  --save_steps 500 \
+  --model_type bert \
+  --per_device_train_batch_size 16 \
+  --gradient_accumulation_steps 1 \
+  --warmup_ratio 0.1 \
+  --learning_rate 1e-4 \
+  --num_train_epochs 8 \
+  --dataloader_drop_last \
+  --overwrite_output_dir \
+  --dataloader_num_workers 2 \
+  --n_head_layers 2 \
+  --skip_from 6 \
+  --max_seq_length 512 \
+  --weight_decay 0.01 \
+  --late_mlm
