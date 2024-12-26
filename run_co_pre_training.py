@@ -151,6 +151,9 @@ def main():
         mlm_probability=data_args.mlm_probability,
         max_seq_length=data_args.max_seq_length,
     )
+    
+    a = 1
+    
     # Initialize our Trainer
     trainer = Trainer(
         model=model,

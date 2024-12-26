@@ -197,14 +197,15 @@ class CoCondenserForPretraining(CondenserForPretraining):
         effective_bsz = train_args.per_device_train_batch_size * self._world_size() * 2
         target = torch.arange(effective_bsz, dtype=torch.long).view(-1, 2).flip([1]).flatten().contiguous()
 
+
         self.register_buffer(
             'co_target', target
         )
 
     def _gather_tensor(self, t: Tensor):
-        all_tensors = [torch.empty_like(t) for _ in range(dist.get_world_size())]
-        dist.all_gather(all_tensors, t)
-        all_tensors[self.train_args.local_rank] = t
+        all_tensors = [torch.empty_like(t) for _ in range(dist.get_world_size())] # 입력받은 tensor와 같은 크기의 텐서 * world_size 
+        dist.all_gather(all_tensors, t) # tensor_list, tensor
+        all_tensors[self.train_args.local_rank] = t # multi processing 
         return all_tensors
 
     def gather_tensors(self, *tt: Tensor):
@@ -227,7 +228,7 @@ class CoCondenserForPretraining(CondenserForPretraining):
 
         cls_hiddens = lm_out.hidden_states[-1][:, :1]
         if self.train_args.local_rank > -1 and grad_cache is None:
-            co_cls_hiddens = self.gather_tensors(cls_hiddens.squeeze().contiguous())[0]
+            co_cls_hiddens = self.gather_tensors(cls_hiddens.squeeze().contiguous())[0] # 비연속적인 텐서를 연속적으로.
         else:
             co_cls_hiddens = cls_hiddens.squeeze()
 
@@ -264,5 +265,6 @@ class CoCondenserForPretraining(CondenserForPretraining):
     def compute_contrastive_loss(self, co_cls_hiddens):
         similarities = torch.matmul(co_cls_hiddens, co_cls_hiddens.transpose(0, 1))
         similarities.fill_diagonal_(float('-inf'))
+        # co_target 
         co_loss = F.cross_entropy(similarities, self.co_target) * self._world_size()
         return co_loss
