@@ -101,6 +101,8 @@ def get_token_num(text, truncate=False):
 import ijson
 import json
 def read_json(file):
+    
+    keys = set()
     with open(file, 'r', encoding='utf-8') as f:
         # data = json.load(f)
         # parser = ijson.parse(f)
@@ -112,11 +114,18 @@ def read_json(file):
         #         print(f"{key}: {value}")
         #         return
         #     # prefix: 
-        objects = ijson.items(f, '38_835390905')
-        for o in objects:
-            print(o) # [835390905, 385, 77919332, '33_1546968948']
-            # 
-        
+        # objects = ijson.items(f, '38_835390905')
+        # for o in objects:
+        #     print(o) # [835390905, 385, 77919332, '33_1546968948']
+        #     # 
+        parser = ijson.parse(f)
+        for prefix, event, value in parser:
+            if event == 'map_key':
+                key = value
+            elif event == 'start_array' and key is not None:
+                for item in value:
+                    print(item)
+
 read_json("msmarco/en_index.json")
 
 quit()

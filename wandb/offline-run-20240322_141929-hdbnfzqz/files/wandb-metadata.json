@@ -1,0 +1,159 @@
+{
+    "os": "Linux-5.10.16.3-microsoft-standard-WSL2-x86_64-with-glibc2.29",
+    "python": "3.8.10",
+    "heartbeatAt": "2024-03-22T05:19:29.117914",
+    "startedAt": "2024-03-22T05:19:29.059162",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--train_dir",
+        "./train_sample",
+        "--output_dir",
+        "./logs",
+        "--model_type",
+        "bert",
+        "--tokenizer_name",
+        "tunib/electra-ko-en-base",
+        "--remove_unused_columns",
+        "false",
+        "--logging_steps",
+        "1",
+        "--do_train",
+        "--save_steps",
+        "20000",
+        "--per_device_train_batch_size",
+        "1",
+        "--gradient_accumulation_steps",
+        "1",
+        "--warmup_ratio",
+        "0.1",
+        "--dataloader_drop_last",
+        "--learning_rate",
+        "1e-4",
+        "--num_train_epochs",
+        "8",
+        "--overwrite_output_dir",
+        "--dataloader_num_workers",
+        "32",
+        "--n_head_layers",
+        "2",
+        "--skip_from",
+        "6",
+        "--max_seq_length",
+        "512",
+        "--weight_decay",
+        "0.01",
+        "--late_mlm"
+    ],
+    "state": "running",
+    "program": "run_co_pre_training.py",
+    "codePathLocal": "run_co_pre_training.py",
+    "codePath": "run_co_pre_training.py",
+    "git": {
+        "remote": "https://3jp4rk:@github.com/3jp4rk/Condenser.git",
+        "commit": "983ef5b332b799e9a411b884b23eb52623dd85c1"
+    },
+    "email": "ejpark@fasoo.com",
+    "root": "/home/ejpark/Condenser",
+    "host": "FS0748A",
+    "username": "ejpark",
+    "executable": "/home/ejpark/Condenser/con/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 2495.9970000000003,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2495.997,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2495.997,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2495.997,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2495.997,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2495.997,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2495.997,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2495.997,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2495.997,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2495.997,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2495.997,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2495.997,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2495.997,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2495.997,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2495.997,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2495.997,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2495.997,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 250.98248672485352,
+            "used": 128.09860229492188
+        }
+    },
+    "memory": {
+        "total": 24.910995483398438
+    }
+}
